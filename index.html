@@ -146,8 +146,13 @@
   .wurow .w{font-family:'Bebas Neue'; font-size:26px; letter-spacing:1px; min-width:78px;}
   .wurow .w .u{font-family:'Saira'; font-size:12px; color:var(--dim); margin-left:3px;}
   .wurow .r{font-size:13px; color:var(--muted);} .wurow .r b{color:var(--text);}
+  .wurow .wupl{display:flex; gap:4px; align-items:flex-end; margin-left:auto; flex-wrap:wrap; justify-content:flex-end; max-width:48%;}
+  .wupl .pl{width:7px; border-radius:2px; box-shadow:inset 0 0 0 1px #0006;}
+  .wupl .pcx{font-size:11px; color:var(--dim); font-weight:700;}
+  .wurow .wupl .pcwarn{font-size:12px; color:#ffb86b; align-self:center;}
   .wurow.adj .w{color:var(--accent);}
-  .wurow.adj::after{content:'OPZ 3'; margin-left:auto; font-size:9px; color:var(--accent); border:1px solid var(--accent); padding:2px 6px; border-radius:6px; letter-spacing:1px;}
+  .wurow.adj .wupl{margin-left:12px;}
+  .wurow.adj::after{content:'OPZ 3'; margin-left:8px; font-size:9px; color:var(--accent); border:1px solid var(--accent); padding:2px 6px; border-radius:6px; letter-spacing:1px; align-self:center;}
   .wunote{font-size:12px; color:var(--muted); padding-top:8px; font-style:italic;}
   .wuempty{font-size:13px; color:var(--dim); padding:4px 0;}
   .flag{margin-top:8px; font-size:11px; color:#ffb86b;}
@@ -526,6 +531,15 @@ function plateBreakdown(weight){
   PLATES.forEach(p=>{ while(rem >= p.w - 1e-6){ out.push(p); rem=Math.round((rem-p.w)*100)/100; } });
   return {ok:true, perSide, plates:out, remainder:Math.round(rem*100)/100, bar, collar};
 }
+function miniPlates(weight){
+  const br=plateBreakdown(weight);
+  if(!br.ok) return '';
+  if(!br.plates.length) return `<span class="wupl"><span class="pcx">bil.</span></span>`;
+  const H={25:26,20:23,15:21,10:19,5:16,2.5:13,1.25:11,0.5:9,0.25:8};
+  let chips=br.plates.map(p=>`<span class="pl" style="height:${H[p.w]||10}px;background:${p.c}"></span>`).join('');
+  if(br.remainder>0) chips+=`<span class="pcwarn" title="non caricabile esatto">!</span>`;
+  return `<span class="wupl">${chips}</span>`;
+}
 
 /* ---------- COEFFICIENTI ETÀ (Foster giovani · McCulloch master) ---------- */
 const FOSTER = {14:1.23,15:1.18,16:1.13,17:1.08,18:1.06,19:1.04,20:1.03,21:1.02,22:1.01,23:1.00};
@@ -664,7 +678,7 @@ function renderLifts(){
       let w=row.w, adj=false;
       if(l.opt===2 && ('opz3' in row)){ if(row.opz3===null) return; w=row.opz3; adj=true; }
       const r=document.createElement('div'); r.className='wurow'+(adj?' adj':'');
-      r.innerHTML=`<span class="n">${idx+1}</span><span class="w">${fmt(w)}<span class="u">kg</span></span><span class="r">×&nbsp;<b>${row.r}</b></span>`;
+      r.innerHTML=`<span class="n">${idx+1}</span><span class="w">${fmt(w)}<span class="u">kg</span></span><span class="r">×&nbsp;<b>${row.r}</b></span>${miniPlates(w)}`;
       if(w!==null && !isNaN(w)) r.onclick=()=>openPlates(w, L.name+' — riscaldamento');
       wl.appendChild(r);
     });
