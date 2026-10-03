@@ -38,7 +38,9 @@
   .brandrow{display:flex; align-items:center; gap:10px; padding:0 14px; max-width:680px; margin:0 auto;}
   .brand{font-family:'Bebas Neue',sans-serif; font-size:30px; letter-spacing:2px; line-height:1;}
   .brand .dot{color:var(--accent);}
-  .brandsub{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px; margin-left:auto; max-width:55%; text-align:right; cursor:pointer;}
+  .brandsub{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:2px; margin-left:auto; max-width:60%; text-align:right; cursor:pointer; line-height:1.25;}
+  .brandsub .tname{display:block; color:var(--text); font-weight:700; text-transform:none; letter-spacing:.3px; font-size:13px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .brandsub .tdate{display:block; font-size:10px; color:var(--accent); letter-spacing:1px;}
   .menubtn{flex:0 0 auto; width:34px; height:34px; border-radius:10px; background:var(--panel); border:1px solid var(--line); color:var(--muted); font-size:18px; display:flex; align-items:center; justify-content:center; cursor:pointer;}
 
   .athletes{display:flex; gap:8px; overflow-x:auto; padding:10px 14px 4px; max-width:680px; margin:0 auto; scrollbar-width:none;}
@@ -180,6 +182,52 @@
   .sbtn.danger{background:#ff3b461a; color:var(--red); border-color:#ff3b4655;}
   .menuitem{display:block; width:100%; text-align:left; padding:15px 16px; border-radius:13px; background:var(--panel2); border:1px solid var(--line); color:var(--text); font-size:15px; font-weight:600; margin-bottom:8px; cursor:pointer;}
   .menuitem.danger{color:var(--red);}
+  .mdiv{height:1px; background:var(--line); margin:10px 2px;}
+  .complist{display:flex !important; flex-direction:column; align-items:flex-start; gap:2px;}
+  .complist.on{border-color:var(--lime); background:#c6ff3a12;}
+  .complist .cmain{font-size:15px; font-weight:700; color:var(--text);}
+  .complist .cdate{font-size:11.5px; color:var(--muted); font-weight:400; text-transform:none; letter-spacing:.2px;}
+  .hwrap{max-height:40vh; overflow-y:auto; margin-bottom:4px;}
+  .hrec{background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-bottom:8px;}
+  .htop{display:flex; justify-content:space-between; align-items:baseline; gap:8px;}
+  .htop .hcomp{font-weight:700; font-size:14px; color:var(--text);}
+  .htop .hdate{font-size:11px; color:var(--accent); letter-spacing:.5px;}
+  .hmid{display:flex; align-items:baseline; gap:10px; margin-top:4px; flex-wrap:wrap;}
+  .hmid .htot{font-family:'Bebas Neue'; font-size:24px; letter-spacing:1px; color:var(--lime);}
+  .hmid .htot .u{font-family:'Saira'; font-size:11px; color:var(--dim); margin-left:2px;}
+  .hmid .hpts{font-family:'Bebas Neue'; font-size:18px; letter-spacing:1px; color:var(--blue);}
+  .hmid .hbw{font-size:11px; color:var(--muted); margin-left:auto;}
+  .hlifts{margin-top:5px; font-size:12px; color:var(--muted);}
+  .savehist{margin-top:12px; width:100%; padding:11px; border-radius:11px; background:#c6ff3a14; border:1px solid #c6ff3a44; color:var(--lime); font-weight:700; font-size:13.5px; cursor:pointer; text-align:center;}
+
+  .lifthead .lifttimer{margin-left:auto; width:34px; height:34px; border-radius:10px; background:var(--panel2); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:16px; cursor:pointer;}
+  .liftproj{text-align:right; cursor:pointer;}
+  .recbar{display:flex; align-items:center; gap:9px; padding:2px 16px 10px; flex-wrap:wrap;}
+  .recbadge{font-size:11px; font-weight:800; letter-spacing:.5px; padding:4px 9px; border-radius:7px; background:var(--panel2); border:1px solid var(--line); color:var(--muted);}
+  .recbadge.ok{background:#c6ff3a1a; border-color:var(--lime); color:var(--lime);}
+  .rectx{font-size:11.5px; color:var(--muted);}
+  .agerow{margin-top:10px;}
+  .agelbl{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--accent); margin-bottom:6px;}
+  .notechip{flex:1 1 100%; margin-top:2px; display:flex; align-items:flex-start; gap:8px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:9px 13px; cursor:pointer;}
+  .notechip .ni{font-size:14px;}
+  .notechip .nt{font-size:13px; color:var(--text); line-height:1.35;}
+  .notechip.empty .nt{color:var(--dim);}
+
+  .plbox{background:var(--panel2); border:1px solid var(--line); border-radius:14px; padding:14px; margin:4px 0 12px; text-align:center;}
+  .plside{font-size:11px; text-transform:uppercase; letter-spacing:1.3px; color:var(--muted); margin-bottom:10px;}
+  .plstack{display:flex; align-items:center; justify-content:center; gap:4px; flex-wrap:wrap; min-height:56px;}
+  .plate{min-width:30px; height:52px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; box-shadow:inset 0 0 0 2px #0003;}
+  .pltxt{margin-top:11px; font-size:13px; color:var(--text);} .pltxt b{color:var(--accent);}
+  .plwarn{margin-top:9px; font-size:12px; color:#ffb86b;}
+  .plbar{margin-top:7px; font-size:11px; color:var(--dim);}
+  .tbig{font-family:'Bebas Neue'; font-size:70px; letter-spacing:3px; text-align:center; line-height:1; margin:6px 0;}
+  .tbig.go{color:var(--lime);}
+  .tsub{text-align:center; font-size:13px; color:var(--muted); margin-bottom:4px;}
+  .tstart{text-align:center; font-size:13.5px; color:var(--accent); margin:8px 0 2px; font-weight:700;}
+  .recedit{display:flex; align-items:center; gap:10px; background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:8px; cursor:pointer;}
+  .recedit .rk{font-size:13px; color:var(--muted); flex:1;}
+  .recedit .rv{font-family:'Bebas Neue'; font-size:22px; letter-spacing:1px; color:var(--accent);} .recedit .rv.none{color:var(--dim);}
+  .tarea{width:100%; min-height:90px; background:var(--panel2); border:1px solid var(--line); color:var(--text); border-radius:12px; padding:12px; font-size:15px; font-family:'Saira'; outline:none; resize:vertical; margin-bottom:14px;}
   .sheet.tall{max-height:85vh; overflow-y:auto;}
   .guide{font-size:13.5px; line-height:1.5;}
   .guide h4{font-family:'Bebas Neue'; font-weight:400; font-size:18px; letter-spacing:1px; margin:16px 0 3px; color:var(--lime);}
@@ -324,9 +372,12 @@ const DEFAULTS = [
 ];
 
 /* ---------- PERSISTENZA ---------- */
-const LSKEY='pedana_v2';
-function save(){ try{ localStorage.setItem(LSKEY, JSON.stringify({team, roster, settings})); }catch(e){} }
-function load(){ try{ const s=localStorage.getItem(LSKEY); return s?JSON.parse(s):null; }catch(e){ return null; } }
+const LSKEY='pedana_v3', OLDKEY='pedana_v2';
+function save(){ try{ store.curComp=comp.id; store.curAth=curAth; localStorage.setItem(LSKEY, JSON.stringify(store)); }catch(e){} }
+function loadRaw(k){ try{ const s=localStorage.getItem(k); return s?JSON.parse(s):null; }catch(e){ return null; } }
+const uid = () => 'id'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const todayISO = () => { const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); };
+function fmtDate(iso){ if(!iso) return ''; const p=String(iso).split('-'); return p.length===3 ? (p[2]+'/'+p[1]+'/'+p[0]) : iso; }
 
 function normLift(l){
   l=l||{};
@@ -340,28 +391,83 @@ function normLift(l){
   return l;
 }
 function normAth(a){
+  a.id = a.id || uid();
+  a.athleteId = a.athleteId || null;
   a.bw = (a.bw===undefined||a.bw==='')? null : a.bw;
   a.sex = (a.sex==='F')?'F':'M';
   a.oppTotal = (typeof a.oppTotal==='number')? a.oppTotal : null;
   a.oppBw = (typeof a.oppBw==='number')? a.oppBw : null;
+  a.records = (a.records && typeof a.records==='object') ? a.records : {};
+  ['squat','panca','stacco','total'].forEach(k=>{ if(typeof a.records[k]!=='number') a.records[k]=null; });
   LIFTS.forEach(L=> a[L.key]=normLift(a[L.key]));
   if(!a.name) a.name='ATLETA';
   return a;
 }
 function makeBlank(name){
-  const a={name:name||'ATLETA', bw:null, sex:'M', oppTotal:null, oppBw:null};
+  const a={id:uid(), athleteId:null, name:name||'ATLETA', bw:null, sex:'M', oppTotal:null, oppBw:null};
   LIFTS.forEach(L=>{ a[L.key]={attempts:[[null,null,null],[null,null,null],[null,null,null]], warmup:[]}; });
   return normAth(a);
 }
+function normProfile(p){
+  p.id = p.id || uid();
+  if(!p.name) p.name='ATLETA';
+  p.sex = (p.sex==='F')?'F':'M';
+  p.history = Array.isArray(p.history)? p.history : [];
+  p.birth = p.birth || null;        // data di nascita ISO (per coeff. età)
+  p.notes = typeof p.notes==='string' ? p.notes : '';
+  return p;
+}
+function normComp(c){
+  c.id = c.id || uid();
+  if(!c.name) c.name='Gara';
+  c.date = c.date || todayISO();
+  c.fed = (c.fed==='FIPE') ? 'FIPE' : 'FIPL';
+  c.settings = Object.assign({formula:'ipf', eq:false}, c.settings||{});
+  c.settings.formula='ipf';   // FIPL e FIPE: sempre IPF GL (Goodlift)
+  c.roster = (Array.isArray(c.roster) && c.roster.length) ? c.roster : [makeBlank('ATLETA 1')];
+  c.roster.forEach(normAth);
+  return c;
+}
 
-let team='strategia di gara';
-let settings={formula:'ipf', eq:false};
-let roster;
-const saved=load();
-if(saved && Array.isArray(saved.roster) && saved.roster.length){ roster=saved.roster; if(saved.team) team=saved.team; if(saved.settings) settings=Object.assign(settings, saved.settings); }
-else { roster=JSON.parse(JSON.stringify(DEFAULTS)); }
-roster.forEach(normAth);
-let curAth=0;
+/* ---------- BOOTSTRAP / MIGRAZIONE ---------- */
+function freshStore(){
+  const c = normComp({ name:'Gara di esempio', date:todayISO(), fed:'FIPL', settings:{formula:'ipf',eq:false}, roster:JSON.parse(JSON.stringify(DEFAULTS)) });
+  const st = { athletes:[], comps:[c], curComp:c.id, curAth:0 };
+  c.roster.forEach(e=>{ const p=normProfile({name:e.name, sex:e.sex}); e.athleteId=p.id; st.athletes.push(p); });
+  return st;
+}
+function migrateV2(old){
+  const c = normComp({ name: (old.team && old.team!=='strategia di gara') ? old.team : 'Gara 1', date:todayISO(), fed:'FIPL', settings: old.settings||{formula:'ipf',eq:false}, roster: old.roster||[] });
+  const st = { athletes:[], comps:[c], curComp:c.id, curAth:0 };
+  c.roster.forEach(e=>{ const p=normProfile({name:e.name, sex:e.sex}); e.athleteId=p.id; st.athletes.push(p); });
+  return st;
+}
+
+let store;
+const _v3 = loadRaw(LSKEY);
+if(_v3 && Array.isArray(_v3.comps) && _v3.comps.length){
+  store=_v3;
+  store.athletes = Array.isArray(store.athletes)? store.athletes : [];
+  store.comps.forEach(normComp);
+  store.athletes.forEach(normProfile);
+} else {
+  const _v2 = loadRaw(OLDKEY);
+  store = (_v2 && Array.isArray(_v2.roster) && _v2.roster.length) ? migrateV2(_v2) : freshStore();
+}
+store.equip = Object.assign({bar:20, collar:2.5}, store.equip||{});
+
+/* ---------- ALIAS GARA ATTIVA ---------- */
+let comp, roster, settings, team, curAth;
+function setActiveComp(){
+  comp = store.comps.find(c=>c.id===store.curComp) || store.comps[0];
+  store.curComp = comp.id;
+  roster = comp.roster;
+  settings = comp.settings;
+  team = comp.name;
+  if(typeof store.curAth!=='number' || store.curAth<0 || store.curAth>=roster.length) store.curAth=0;
+  curAth = store.curAth;
+}
+setActiveComp();
 
 const fmt = n => (n===null||n===undefined||n==='') ? '—' : String(n).replace('.',',');
 
@@ -403,6 +509,44 @@ function totalForPoints(pts, a){
 }
 const round1 = n => (n===null||n===undefined)? null : Math.round(n*10)/10;
 
+/* ---------- DISCHI (caricamento bilanciere) ---------- */
+const PLATES = [
+  {w:25, c:'#e53935'}, {w:20, c:'#1e88e5'}, {w:15, c:'#fdd835', t:'#222'},
+  {w:10, c:'#43a047'}, {w:5, c:'#eceff1', t:'#222'}, {w:2.5, c:'#8e24aa'},
+  {w:1.25, c:'#b0bec5', t:'#222'}, {w:0.5, c:'#90a4ae', t:'#222'}, {w:0.25, c:'#78909c', t:'#222'}
+];
+function plateBreakdown(weight){
+  const bar=store.equip.bar, collar=store.equip.collar;
+  if(weight===null||weight===undefined||isNaN(weight)) return {ok:false, reason:'no'};
+  const base=bar+2*collar;
+  if(weight < base) return {ok:false, reason:'low', base};
+  let perSide=(weight-base)/2;
+  perSide=Math.round(perSide*100)/100;
+  const out=[]; let rem=perSide;
+  PLATES.forEach(p=>{ while(rem >= p.w - 1e-6){ out.push(p); rem=Math.round((rem-p.w)*100)/100; } });
+  return {ok:true, perSide, plates:out, remainder:Math.round(rem*100)/100, bar, collar};
+}
+
+/* ---------- COEFFICIENTI ETÀ (Foster giovani · McCulloch master) ---------- */
+const FOSTER = {14:1.23,15:1.18,16:1.13,17:1.08,18:1.06,19:1.04,20:1.03,21:1.02,22:1.01,23:1.00};
+const MCCULLOCH = {40:1.000,41:1.010,42:1.020,43:1.031,44:1.043,45:1.055,46:1.068,47:1.082,48:1.097,49:1.113,50:1.130,51:1.147,52:1.165,53:1.184,54:1.204,55:1.225,56:1.246,57:1.268,58:1.291,59:1.315,60:1.340,61:1.366,62:1.393,63:1.421,64:1.450,65:1.480,66:1.511,67:1.543,68:1.576,69:1.610,70:1.645,71:1.681,72:1.718,73:1.756,74:1.795,75:1.835,76:1.876,77:1.918,78:1.961,79:2.005,80:2.050,81:2.096,82:2.143,83:2.190,84:2.238,85:2.287,86:2.337,87:2.388,88:2.440,89:2.494,90:2.549};
+function ageAt(birthISO, refISO){
+  if(!birthISO) return null;
+  const b=new Date(birthISO), r=new Date(refISO||todayISO());
+  if(isNaN(b)||isNaN(r)) return null;
+  let age=r.getFullYear()-b.getFullYear();
+  const m=r.getMonth()-b.getMonth();
+  if(m<0 || (m===0 && r.getDate()<b.getDate())) age--;
+  return age;
+}
+function ageFactor(age){
+  if(age===null||age===undefined) return {f:1, cat:null};
+  if(age>=14 && age<=23) return {f:FOSTER[age], cat:'Junior'};
+  if(age>=40){ const a=Math.min(age,90); return {f:MCCULLOCH[a], cat:'Master'}; }
+  return {f:1, cat:null};
+}
+function profileOf(a){ return a.athleteId ? store.athletes.find(p=>p.id===a.athleteId) : null; }
+
 /* ---------- RENDER ---------- */
 function renderAthletes(){
   const c=document.getElementById('athletes'); c.innerHTML='';
@@ -417,7 +561,10 @@ function renderAthletes(){
   add.onclick=()=>openEditor(null);
   c.appendChild(add);
 }
-function renderTeam(){ document.getElementById('teamLbl').textContent = team; }
+function renderTeam(){
+  const el=document.getElementById('teamLbl');
+  el.innerHTML = `<span class="tname">${comp.name}</span><span class="tdate">${fmtDate(comp.date)} ▾</span>`;
+}
 
 function renderBodyweight(){
   const bar=document.getElementById('bwbar'); bar.innerHTML='';
@@ -428,8 +575,15 @@ function renderBodyweight(){
   bar.appendChild(chip);
   const sx=document.createElement('div'); sx.className='bwchip';
   sx.innerHTML=`<span class="k">Sesso</span><span class="v" style="color:var(--accent)">${a.sex}</span>`;
-  sx.onclick=()=>{ a.sex = a.sex==='M'?'F':'M'; renderAll(); };
+  sx.onclick=()=>{ a.sex = a.sex==='M'?'F':'M'; syncProfile(a); renderAll(); };
   bar.appendChild(sx);
+  // nota tecnica (dal profilo)
+  const prof=profileOf(a);
+  const note = prof ? (prof.notes||'') : '';
+  const nc=document.createElement('div'); nc.className='notechip'+(note?'':' empty');
+  nc.innerHTML = note ? `<span class="ni">📝</span><span class="nt">${note.replace(/</g,'&lt;')}</span>` : `<span class="ni">📝</span><span class="nt">＋ nota tecnica</span>`;
+  nc.onclick=()=>{ const p=ensureProfile(a); openTextArea({title:'Nota tecnica', sub:a.name+' · cue, comandi, promemoria', value:p.notes, onDone:v=>{ p.notes=v; save(); renderAll(); }}); };
+  bar.appendChild(nc);
 }
 
 function renderMaster(){
@@ -462,9 +616,13 @@ function renderLifts(){
     const card=document.createElement('div'); card.className='lift';
 
     const head=document.createElement('div'); head.className='lifthead';
+    const bestW=bestAttempt(a,L.key);
     head.innerHTML=`<div class="liftname"><span class="bar" style="background:${L.color}"></span>${L.name}</div>
-      <div class="liftproj"><div class="n">${fmt(bestAttempt(a,L.key))}</div><div class="t">previsto</div></div>`;
+      <div class="lifttimer" title="Timer riscaldamento">⏱</div>
+      <div class="liftproj"><div class="n">${fmt(bestW)}</div><div class="t">previsto · dischi</div></div>`;
     card.appendChild(head);
+    head.querySelector('.lifttimer').onclick=()=>openTimer(L);
+    head.querySelector('.liftproj').onclick=()=>openPlates(bestW, L.name+' — previsto');
 
     const opts=document.createElement('div'); opts.className='opts';
     [0,1,2].forEach(o=>{
@@ -507,6 +665,7 @@ function renderLifts(){
       if(l.opt===2 && ('opz3' in row)){ if(row.opz3===null) return; w=row.opz3; adj=true; }
       const r=document.createElement('div'); r.className='wurow'+(adj?' adj':'');
       r.innerHTML=`<span class="n">${idx+1}</span><span class="w">${fmt(w)}<span class="u">kg</span></span><span class="r">×&nbsp;<b>${row.r}</b></span>`;
+      if(w!==null && !isNaN(w)) r.onclick=()=>openPlates(w, L.name+' — riscaldamento');
       wl.appendChild(r);
     });
     if(l.note){const n=document.createElement('div'); n.className='wunote'; n.textContent='ⓘ '+l.note; wl.appendChild(n);}
@@ -522,7 +681,7 @@ function renderRank(){
   const a=roster[curAth];
   const root=document.getElementById('rank'); root.innerHTML='';
   const card=document.createElement('div'); card.className='rank';
-  const formulaName = settings.formula==='dots' ? 'DOTS' : ('IPF GL '+(settings.eq?'Equipped':'Classic'));
+  const formulaName = comp.fed+' · IPF GL '+(settings.eq?'Equipped':'Classic');
 
   let proj=0, made=0, anyMade=false;
   LIFTS.forEach(l=>{ proj+=bestAttempt(a,l.key); const m=madeAttempt(a,l.key); if(m!==null){made+=m; anyMade=true;} });
@@ -568,29 +727,45 @@ function renderRank(){
     </div>
     <div class="oppout">${outHtml}</div>`;
 
-  // ===== PUNTI A COEFFICIENTE =====
+  // ===== PUNTI A COEFFICIENTE (IPF GL) =====
   const segHtml = `<div class="seg">
-      <div class="sgbtn ${settings.formula==='ipf'?'on':''}" data-f="ipf">IPF GL</div>
-      <div class="sgbtn ${settings.formula==='dots'?'on':''}" data-f="dots">DOTS</div>
-    </div>` + (settings.formula==='ipf' ? `<div class="seg">
       <div class="sgbtn ${!settings.eq?'on':''}" data-e="0">Classic / Raw</div>
       <div class="sgbtn ${settings.eq?'on':''}" data-e="1">Equipped</div>
-    </div>` : '');
+    </div>`;
   const ptsBoxes = `<div class="ptsrow">
       <div class="ptsbox proj"><div class="k">Punti previsti</div><div class="v ${pProj===null?'none':''}">${pProj===null?'—':fmt(round1(pProj))}</div></div>
       <div class="ptsbox made"><div class="k">Punti fatti</div><div class="v ${pMade===null?'none':''}">${pMade===null?'—':fmt(round1(pMade))}</div></div>
     </div>`;
   const bwHint = a.bw ? '' : `<div class="rnote2" id="setbw">⚠️ Inserisci il <b>peso corporeo</b> (tocca qui) per calcolare i punti.</div>`;
+  // punti età (Foster/McCulloch) se profilo ha data di nascita
+  let ageHtml='';
+  const prof=profileOf(a);
+  const age = prof ? ageAt(prof.birth, comp.date) : null;
+  const af = ageFactor(age);
+  if(age!==null && af.cat && a.bw && (pProj!==null)){
+    const apProj = pProj*af.f, apMade = pMade!==null? pMade*af.f : null;
+    ageHtml=`<div class="agerow"><div class="agelbl">${af.cat} · ${age} anni · ×${af.f.toFixed(3)}</div>
+      <div class="ptsrow">
+        <div class="ptsbox proj"><div class="k">Punti età prev.</div><div class="v">${fmt(round1(apProj))}</div></div>
+        <div class="ptsbox made"><div class="k">Punti età fatti</div><div class="v ${apMade===null?'none':''}">${apMade===null?'—':fmt(round1(apMade))}</div></div>
+      </div></div>`;
+  }
+  // record totale
+  let recTotHtml='';
   const pts=document.createElement('div');
-  pts.innerHTML=`<div class="rsec">📊 Punti classifica — ${formulaName}</div>${segHtml}${ptsBoxes}${bwHint}`;
+  pts.innerHTML=`<div class="rsec">📊 Punti classifica — ${formulaName}</div>${segHtml}${ptsBoxes}${ageHtml}${recTotHtml}${bwHint}`;
   card.appendChild(pts);
   card.appendChild(opp);
+  const sh=document.createElement('div'); sh.className='savehist'; sh.id='saveHistBtn'; sh.textContent='📌 Salva questo risultato nello storico';
+  card.appendChild(sh);
 
   root.appendChild(card);
 
+  sh.onclick=()=>saveToHistory(curAth, true);
+
   card.querySelector('#oppTotIn').onclick=()=>openNum({title:'Totale avversario', sub:'Il totale (kg) da superare — aggiornalo a ogni sua chiamata', value:a.oppTotal, clearLabel:'Cancella', onDone:v=>{ a.oppTotal=v; renderAll(); }});
   card.querySelector('#oppBwIn').onclick=()=>openNum({title:'Peso corporeo avversario', sub:"Solo se è in un'altra categoria (confronto a punti). Vuoto = stessa categoria.", value:a.oppBw, clearLabel:'Cancella', onDone:v=>{ a.oppBw=v; renderAll(); }});
-  pts.querySelectorAll('.sgbtn').forEach(b=>{ b.onclick=()=>{ if(b.dataset.f) settings.formula=b.dataset.f; if(b.dataset.e!==undefined) settings.eq=(b.dataset.e==='1'); renderAll(); }; });
+  pts.querySelectorAll('.sgbtn').forEach(b=>{ b.onclick=()=>{ if(b.dataset.e!==undefined) settings.eq=(b.dataset.e==='1'); renderAll(); }; });
   const sb=pts.querySelector('#setbw'); if(sb) sb.onclick=()=>openNum({title:'Peso corporeo', sub:a.name+' · serve per i punti', value:a.bw, clearLabel:'Cancella', onDone:v=>{ a.bw=v; renderAll(); }});
 }
 
@@ -687,13 +862,101 @@ function commitEditor(){
   normAth(draft);
   if(editIndex===null){ roster.push(draft); curAth=roster.length-1; }
   else { roster[editIndex]=draft; curAth=editIndex; }
+  ensureProfile(draft); syncProfile(draft);
   closeEditor(); renderAll(); window.scrollTo({top:0});
 }
 
 /* ---------- MODALI ---------- */
 const ov=document.getElementById('overlay'), sheet=document.getElementById('sheet');
-function closeSheet(){ ov.classList.remove('show'); sheet.innerHTML=''; sheet.classList.remove('tall'); }
+let _timerInt=null;
+function closeSheet(){ if(_timerInt){clearInterval(_timerInt); _timerInt=null;} ov.classList.remove('show'); sheet.innerHTML=''; sheet.classList.remove('tall'); }
 ov.onclick=e=>{ if(e.target===ov) closeSheet(); };
+
+function openTextArea(opts){
+  sheet.innerHTML=`<h3>${opts.title}</h3><div class="sub">${opts.sub||''}</div>
+    <textarea id="taIn" class="tarea" placeholder="${opts.placeholder||'Scrivi qui…'}">${(opts.value||'').replace(/</g,'&lt;')}</textarea>
+    <div class="sheetbtns"><div class="sbtn ghost" id="taCancel">Annulla</div><div class="sbtn ok" id="taOk">Salva</div></div>`;
+  sheet.querySelector('#taCancel').onclick=closeSheet;
+  sheet.querySelector('#taOk').onclick=()=>{ const v=sheet.querySelector('#taIn').value.trim(); closeSheet(); opts.onDone(v); };
+  ov.classList.add('show');
+}
+
+/* ---------- DISCHI ---------- */
+function openPlates(weight, title){
+  let wv = (typeof weight==='number' && !isNaN(weight)) ? weight : null;
+  function body(){
+    const br=plateBreakdown(wv);
+    let inner;
+    if(!br.ok){
+      inner = wv===null ? `<div class="plwarn">Inserisci un peso.</div>`
+        : `<div class="plwarn">Peso inferiore a bilanciere + collari (${fmt(store.equip.bar+2*store.equip.collar)} kg).</div>`;
+    } else {
+      const chips = br.plates.length ? br.plates.map(p=>`<div class="plate" style="background:${p.c};color:${p.t||'#fff'}">${fmt(p.w)}</div>`).join('') : `<div class="pltxt" style="margin:0">solo bilanciere + collari</div>`;
+      const txt = br.plates.length ? br.plates.map(p=>fmt(p.w)).join(' + ') : '—';
+      inner = `<div class="plside">per lato · ${fmt(br.perSide)} kg</div><div class="plstack">${chips}</div>
+        <div class="pltxt">per lato: <b>${txt}</b></div>
+        ${br.remainder>0?`<div class="plwarn">⚠ avanzo ${fmt(br.remainder)} kg per lato: peso non caricabile coi dischi standard.</div>`:''}
+        <div class="plbar">bilanciere ${fmt(br.bar)} + collari 2×${fmt(br.collar)} kg</div>`;
+    }
+    return `<div class="plbox">${inner}</div>`;
+  }
+  function draw(){
+    sheet.innerHTML=`<h3>Caricamento bilanciere</h3><div class="sub">${title||''}</div>
+      <input id="plIn" class="numval" inputmode="decimal" value="${wv===null?'':fmt(wv)}" placeholder="kg">
+      <div class="steps">
+        <div class="step minus" data-d="-5">−5</div><div class="step minus" data-d="-2.5">−2.5</div><div class="step minus" data-d="-1.25">−1.25</div>
+        <div class="step plus" data-d="1.25">+1.25</div><div class="step plus" data-d="2.5">+2.5</div><div class="step plus" data-d="5">+5</div>
+      </div>
+      ${body()}
+      <div class="sheetbtns"><div class="sbtn ghost" id="plEquip">⚙️ Attrezzatura</div><div class="sbtn ok" id="plOk">Chiudi</div></div>`;
+    const inp=sheet.querySelector('#plIn');
+    inp.oninput=()=>{ const t=inp.value.trim().replace(',','.'); wv = t===''?null:(isNaN(parseFloat(t))?wv:parseFloat(t)); sheet.querySelector('.plbox').outerHTML=body(); };
+    sheet.querySelectorAll('.step').forEach(s=>s.onclick=()=>{ let c=parseFloat((inp.value||'').replace(',','.')); if(isNaN(c))c=0; c=Math.round((c+parseFloat(s.dataset.d))*100)/100; if(c<0)c=0; wv=c; inp.value=fmt(c); sheet.querySelector('.plbox').outerHTML=body(); });
+    sheet.querySelector('#plOk').onclick=closeSheet;
+    sheet.querySelector('#plEquip').onclick=()=>openEquip(()=>draw());
+  }
+  draw(); ov.classList.add('show');
+}
+function openEquip(after){
+  sheet.innerHTML=`<h3>Attrezzatura</h3><div class="sub">Bilanciere e collari per il calcolo dischi (standard IPF: 20 + 2,5)</div>
+    <div class="recedit" id="eqBar"><span class="rk">Bilanciere</span><span class="rv">${fmt(store.equip.bar)} kg</span></div>
+    <div class="recedit" id="eqCol"><span class="rk">Collari (l'uno)</span><span class="rv">${fmt(store.equip.collar)} kg</span></div>
+    <div class="sheetbtns"><div class="sbtn ok" id="eqOk">OK</div></div>`;
+  sheet.querySelector('#eqBar').onclick=()=>openNum({title:'Peso bilanciere', sub:'kg', value:store.equip.bar, onDone:v=>{ if(v!=null){store.equip.bar=v; save();} openEquip(after); }});
+  sheet.querySelector('#eqCol').onclick=()=>openNum({title:'Peso collare (l\'uno)', sub:'kg · IPF 2,5', value:store.equip.collar, onDone:v=>{ if(v!=null){store.equip.collar=v; save();} openEquip(after); }});
+  sheet.querySelector('#eqOk').onclick=()=>{ if(after) after(); else closeSheet(); };
+  ov.classList.add('show');
+}
+
+/* ---------- TIMER RISCALDAMENTO ---------- */
+function openTimer(L){
+  const a=roster[curAth];
+  let sets=0; (a[L.key].warmup||[]).forEach(row=>{ if(a[L.key].opt===2 && ('opz3' in row) && row.opz3===null) return; sets++; });
+  let n=3, sec=60; const minPerSet=150;
+  let remaining=n*sec, running=false;
+  function mmss(s){ s=Math.max(0,Math.round(s)); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+  function draw(){
+    const warmNeed=sets*minPerSet;
+    const go = remaining<=warmNeed && remaining>0;
+    sheet.innerHTML=`<h3>Timer riscaldamento — ${L.name}</h3><div class="sub">Quante alzate mancano prima del tuo atleta</div>
+      <div class="recedit" id="tN"><span class="rk">Alzate prima di te</span><span class="rv">${n}</span></div>
+      <div class="recedit" id="tS"><span class="rk">Secondi per alzata</span><span class="rv">${sec}s</span></div>
+      <div class="tbig ${go?'go':''}" id="tBig">${mmss(remaining)}</div>
+      <div class="tsub">stima tempo alla pedana</div>
+      ${sets?`<div class="tstart">${go?'▶ INIZIA LA RAMPA ORA':'Rampa: '+sets+' serie · parti quando mancano '+mmss(warmNeed)}</div>`:`<div class="tstart" style="color:var(--dim)">Nessuna serie di riscaldamento impostata per questa opzione</div>`}
+      <div class="steps">
+        <div class="step" id="tReset">↺ reset</div>
+        <div class="step plus" id="tRun" style="flex:2">${running?'⏸ Pausa':'▶ Avvia'}</div>
+      </div>
+      <div class="sheetbtns"><div class="sbtn ok" id="tClose">Chiudi</div></div>`;
+    sheet.querySelector('#tN').onclick=()=>openNum({title:'Alzate prima di te', sub:'quante alzate mancano', value:n, onDone:v=>{ if(v!=null){n=Math.max(0,Math.round(v)); if(!running) remaining=n*sec;} draw(); }});
+    sheet.querySelector('#tS').onclick=()=>openNum({title:'Secondi per alzata', sub:'di solito ~60s', value:sec, onDone:v=>{ if(v!=null){sec=Math.max(10,Math.round(v)); if(!running) remaining=n*sec;} draw(); }});
+    sheet.querySelector('#tReset').onclick=()=>{ running=false; if(_timerInt){clearInterval(_timerInt);_timerInt=null;} remaining=n*sec; draw(); };
+    sheet.querySelector('#tRun').onclick=()=>{ running=!running; if(running){ _timerInt=setInterval(()=>{ remaining--; if(remaining<=0){remaining=0; running=false; clearInterval(_timerInt); _timerInt=null;} const el=sheet.querySelector('#tBig'); if(el){ el.textContent=mmss(remaining); el.classList.toggle('go', remaining<=sets*minPerSet && remaining>0);} else { clearInterval(_timerInt); _timerInt=null; } }, 1000); } else { if(_timerInt){clearInterval(_timerInt);_timerInt=null;} } draw(); };
+    sheet.querySelector('#tClose').onclick=closeSheet;
+  }
+  draw(); ov.classList.add('show');
+}
 
 function openNum(opts){
   const v=opts.value;
@@ -742,23 +1005,205 @@ function openConfirm(title, sub, okLabel, onOk){
 
 function openMenu(){
   const a=roster[curAth];
-  sheet.innerHTML=`<h3>Gestione</h3><div class="sub">${a.name} · ${roster.length} atleti in lista</div>
+  sheet.innerHTML=`<h3>Gestione</h3><div class="sub">${comp.name} · ${roster.length} atleti</div>
+    <button class="menuitem" id="mComps">🏆 &nbsp;Gare — cambia / nuova</button>
+    <button class="menuitem" id="mAnag">👤 &nbsp;Anagrafica atleti</button>
+    <button class="menuitem" id="mSaveHist">📌 &nbsp;Salva risultato di “${a.name}” nello storico</button>
+    <button class="menuitem" id="mPlates">🏋 &nbsp;Caricamento bilanciere</button>
+    <div class="mdiv"></div>
     <button class="menuitem" id="mGuide">❓ &nbsp;Guida — come si usa</button>
-    <button class="menuitem" id="mAdd">＋ &nbsp;Aggiungi atleta</button>
+    <button class="menuitem" id="mAdd">＋ &nbsp;Aggiungi atleta a questa gara</button>
     <button class="menuitem" id="mEdit">📝 &nbsp;Modifica piano di “${a.name}”</button>
     <button class="menuitem" id="mRename">✎ &nbsp;Rinomina “${a.name}”</button>
-    <button class="menuitem" id="mTeam">🏷 &nbsp;Nome team / gara</button>
-    <button class="menuitem danger" id="mDel">🗑 &nbsp;Elimina “${a.name}”</button>
-    <button class="menuitem" id="mClear">⌫ &nbsp;Svuota lista (ricomincia da zero)</button>
+    <button class="menuitem danger" id="mDel">🗑 &nbsp;Togli “${a.name}” da questa gara</button>
+    <button class="menuitem" id="mClear">⌫ &nbsp;Svuota lista di questa gara</button>
     <div class="sheetbtns"><div class="sbtn ghost" id="mClose">Chiudi</div></div>`;
   sheet.querySelector('#mClose').onclick=closeSheet;
+  sheet.querySelector('#mComps').onclick=()=>{ closeSheet(); openComps(); };
+  sheet.querySelector('#mAnag').onclick=()=>{ closeSheet(); openAnagrafica(); };
+  sheet.querySelector('#mSaveHist').onclick=()=>{ closeSheet(); saveToHistory(curAth, true); };
+  sheet.querySelector('#mPlates').onclick=()=>{ closeSheet(); openPlates(null, 'Calcolo libero'); };
   sheet.querySelector('#mGuide').onclick=()=>{ closeSheet(); openGuide(); };
-  sheet.querySelector('#mAdd').onclick=()=>{ closeSheet(); openEditor(null); };
+  sheet.querySelector('#mAdd').onclick=()=>{ closeSheet(); openAddAthlete(); };
   sheet.querySelector('#mEdit').onclick=()=>{ closeSheet(); openEditor(curAth); };
-  sheet.querySelector('#mRename').onclick=()=>{ closeSheet(); openText({title:'Rinomina atleta', value:a.name, onDone:n=>{ if(n){a.name=n; renderAll();} }}); };
-  sheet.querySelector('#mTeam').onclick=()=>{ closeSheet(); openText({title:'Nome team / gara', value:team, placeholder:'Es. Team Rossi — Regionali', onDone:n=>{ team=n||team; renderAll(); }}); };
-  sheet.querySelector('#mDel').onclick=()=>{ closeSheet(); openConfirm('Eliminare atleta?', '“'+a.name+'” verrà rimosso dalla lista.', 'Elimina', ()=>removeAthlete(curAth)); };
-  sheet.querySelector('#mClear').onclick=()=>{ closeSheet(); openConfirm('Svuotare la lista?', 'Resta un atleta vuoto da compilare. Le modifiche andranno perse.', 'Svuota', ()=>{ roster=[makeBlank('ATLETA 1')]; curAth=0; renderAll(); }); };
+  sheet.querySelector('#mRename').onclick=()=>{ closeSheet(); openText({title:'Rinomina atleta', value:a.name, onDone:n=>{ if(n){ a.name=n; syncProfile(a); renderAll(); } }}); };
+  sheet.querySelector('#mDel').onclick=()=>{ closeSheet(); openConfirm('Togliere atleta dalla gara?', '“'+a.name+'” verrà rimosso da questa gara. Lo storico personale resta in anagrafica.', 'Togli', ()=>removeAthlete(curAth)); };
+  sheet.querySelector('#mClear').onclick=()=>{ closeSheet(); openConfirm('Svuotare la lista?', 'Resta un atleta vuoto da compilare. Le modifiche di questa gara andranno perse.', 'Svuota', ()=>{ roster.length=0; roster.push(makeBlank('ATLETA 1')); curAth=0; renderAll(); }); };
+  ov.classList.add('show');
+}
+
+/* ---------- GARE ---------- */
+function switchComp(id){ store.curComp=id; curAth=0; setActiveComp(); renderAll(); window.scrollTo({top:0}); }
+function openComps(){
+  sheet.classList.add('tall');
+  let rows = store.comps.map(c=>{
+    const active = c.id===comp.id;
+    return `<button class="menuitem complist${active?' on':''}" data-id="${c.id}">
+      <span class="cmain">${active?'✓ ':''}${c.name} <span style="color:var(--accent);font-weight:700">· ${c.fed}</span></span><span class="cdate">${fmtDate(c.date)} · ${c.roster.length} atleti · ${c.settings.eq?'Equipped':'Classic'}</span></button>`;
+  }).join('');
+  sheet.innerHTML=`<h3>Gare</h3><div class="sub">${store.comps.length} gare salvate · tocca per aprire</div>
+    ${rows}
+    <div class="mdiv"></div>
+    <button class="menuitem" id="cNew">＋ &nbsp;Nuova gara</button>
+    <button class="menuitem" id="cFed">🏳 &nbsp;Federazione gara attiva: ${comp.fed}</button>
+    <button class="menuitem" id="cDiv">🏋 &nbsp;Divisione: ${comp.settings.eq?'Equipped':'Classic'}</button>
+    <button class="menuitem" id="cRen">✎ &nbsp;Rinomina gara attiva</button>
+    <button class="menuitem" id="cDate">📅 &nbsp;Data gara attiva</button>
+    <button class="menuitem danger" id="cDel">🗑 &nbsp;Elimina gara attiva</button>
+    <div class="sheetbtns"><div class="sbtn ghost" id="cClose">Chiudi</div></div>`;
+  sheet.querySelectorAll('.complist').forEach(b=>b.onclick=()=>{ closeSheet(); switchComp(b.dataset.id); });
+  sheet.querySelector('#cClose').onclick=closeSheet;
+  sheet.querySelector('#cNew').onclick=()=>{ closeSheet(); openNewComp(); };
+  sheet.querySelector('#cFed').onclick=()=>{ comp.fed = comp.fed==='FIPL'?'FIPE':'FIPL'; save(); openComps(); };
+  sheet.querySelector('#cDiv').onclick=()=>{ comp.settings.eq = !comp.settings.eq; save(); openComps(); };
+  sheet.querySelector('#cRen').onclick=()=>{ closeSheet(); openText({title:'Rinomina gara', value:comp.name, onDone:n=>{ if(n){ comp.name=n; team=n; renderAll(); } }}); };
+  sheet.querySelector('#cDate').onclick=()=>{ closeSheet(); openDate(comp.date, v=>{ comp.date=v||comp.date; renderAll(); }); };
+  sheet.querySelector('#cDel').onclick=()=>{ closeSheet(); openConfirm('Eliminare questa gara?', '“'+comp.name+'” e i suoi dati verranno eliminati. Lo storico personale degli atleti resta in anagrafica.', 'Elimina', ()=>{
+    store.comps = store.comps.filter(c=>c.id!==comp.id);
+    if(!store.comps.length){ const c=normComp({name:'Gara 1', date:todayISO(), fed:'FIPL', roster:[makeBlank('ATLETA 1')]}); store.comps.push(c); }
+    store.curComp=store.comps[0].id; curAth=0; setActiveComp(); renderAll();
+  }); };
+  ov.classList.add('show');
+}
+function openNewComp(){
+  let name='', fed='FIPL', eq=false;
+  function draw(){
+    sheet.innerHTML=`<h3>Nuova gara</h3><div class="sub">Nome, federazione e divisione</div>
+      <input id="ncName" class="tin" type="text" value="${name.replace(/"/g,'&quot;')}" placeholder="Es. Regionali 2026">
+      <div class="edlabel" style="margin:4px 0 6px">Federazione</div>
+      <div class="edsexrow" style="margin-bottom:12px">
+        <div class="edsex ${fed==='FIPL'?'on':''}" data-fed="FIPL">FIPL</div>
+        <div class="edsex ${fed==='FIPE'?'on':''}" data-fed="FIPE">FIPE</div>
+      </div>
+      <div class="edlabel" style="margin:4px 0 6px">Divisione</div>
+      <div class="edsexrow" style="margin-bottom:4px">
+        <div class="edsex ${!eq?'on':''}" data-div="0">Classic / Raw</div>
+        <div class="edsex ${eq?'on':''}" data-div="1">Equipped</div>
+      </div>
+      <div class="edhint">Entrambe usano il punteggio IPF GL (Goodlift) e i coefficienti età IPF.</div>
+      <div class="sheetbtns"><div class="sbtn ghost" id="ncCancel">Annulla</div><div class="sbtn ok" id="ncOk">Crea gara</div></div>`;
+    sheet.querySelector('#ncName').oninput=e=>{ name=e.target.value; };
+    sheet.querySelectorAll('[data-fed]').forEach(b=>b.onclick=()=>{ fed=b.dataset.fed; draw(); });
+    sheet.querySelectorAll('[data-div]').forEach(b=>b.onclick=()=>{ eq=b.dataset.div==='1'; draw(); });
+    sheet.querySelector('#ncCancel').onclick=closeSheet;
+    sheet.querySelector('#ncOk').onclick=()=>{
+      const c=normComp({name:name.trim()||('Gara '+(store.comps.length+1)), date:todayISO(), fed:fed, settings:{formula:'ipf',eq:eq}, roster:[makeBlank('ATLETA 1')]});
+      store.comps.push(c); closeSheet(); switchComp(c.id);
+    };
+  }
+  draw(); ov.classList.add('show');
+}
+function openDate(cur, onDone){
+  sheet.innerHTML=`<h3>Data gara</h3><div class="sub">Scegli la data della competizione</div>
+    <input id="dIn" class="tin" type="date" value="${cur||todayISO()}">
+    <div class="sheetbtns"><div class="sbtn ghost" id="dCancel">Annulla</div><div class="sbtn ok" id="dOk">OK</div></div>`;
+  sheet.querySelector('#dCancel').onclick=closeSheet;
+  sheet.querySelector('#dOk').onclick=()=>{ const v=sheet.querySelector('#dIn').value; closeSheet(); onDone(v); };
+  ov.classList.add('show');
+}
+
+/* ---------- ANAGRAFICA & STORICO ---------- */
+function syncProfile(a){
+  if(!a.athleteId) return;
+  const p=store.athletes.find(x=>x.id===a.athleteId);
+  if(p){ p.name=a.name; p.sex=a.sex; }
+}
+function ensureProfile(a){
+  if(a.athleteId){ const p=store.athletes.find(x=>x.id===a.athleteId); if(p) return p; }
+  const p=normProfile({name:a.name, sex:a.sex}); store.athletes.push(p); a.athleteId=p.id; return p;
+}
+function saveToHistory(i, announce){
+  const a=roster[i];
+  const p=ensureProfile(a);
+  let proj=0, made=0, anyMade=false; const bestLifts={};
+  LIFTS.forEach(l=>{ proj+=bestAttempt(a,l.key); const m=madeAttempt(a,l.key); bestLifts[l.key]=m; if(m!==null){made+=m; anyMade=true;} });
+  const total = anyMade? made : proj;
+  const pts = pointsFor(total, a);
+  const rec = { compId:comp.id, compName:comp.name, date:comp.date, bw:a.bw,
+    formula:comp.settings.formula, eq:comp.settings.eq,
+    total:round1(total), done:anyMade, points:round1(pts),
+    squat:bestLifts.squat, panca:bestLifts.panca, stacco:bestLifts.stacco };
+  p.history = p.history.filter(h=>h.compId!==comp.id);
+  p.history.push(rec);
+  p.history.sort((x,y)=> (y.date||'').localeCompare(x.date||''));
+  save();
+  if(announce) openInfo('Salvato nello storico', '“'+a.name+'” · '+comp.name+': totale '+fmt(round1(total))+' kg'+(pts?(' · '+fmt(round1(pts))+' pt'):'')+(anyMade?' (fatto)':' (previsto)')+'.');
+}
+function openInfo(title, msg){
+  sheet.innerHTML=`<h3>${title}</h3><div class="sub">${msg}</div><div class="sheetbtns"><div class="sbtn ok" id="iOk">OK</div></div>`;
+  sheet.querySelector('#iOk').onclick=closeSheet; ov.classList.add('show');
+}
+function openAnagrafica(){
+  sheet.classList.add('tall');
+  let rows = store.athletes.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(p=>{
+    const inComp = roster.some(e=>e.athleteId===p.id);
+    return `<button class="menuitem complist" data-id="${p.id}">
+      <span class="cmain">${p.name} <span style="color:var(--dim);font-weight:400">· ${p.sex}</span></span>
+      <span class="cdate">${p.history.length} gare in storico${inComp?' · in questa gara':''}</span></button>`;
+  }).join('') || `<div class="sub" style="padding:6px 2px">Nessun atleta in anagrafica.</div>`;
+  sheet.innerHTML=`<h3>Anagrafica atleti</h3><div class="sub">${store.athletes.length} atleti · tocca per lo storico</div>
+    ${rows}
+    <div class="mdiv"></div>
+    <button class="menuitem" id="aNew">＋ &nbsp;Nuovo atleta in anagrafica</button>
+    <div class="sheetbtns"><div class="sbtn ghost" id="aClose">Chiudi</div></div>`;
+  sheet.querySelectorAll('.complist').forEach(b=>b.onclick=()=>{ closeSheet(); openProfile(b.dataset.id); });
+  sheet.querySelector('#aClose').onclick=closeSheet;
+  sheet.querySelector('#aNew').onclick=()=>{ closeSheet(); openText({title:'Nuovo atleta', sub:'Nome · verrà aggiunto solo in anagrafica', placeholder:'Es. Luca', onDone:n=>{ if(n){ store.athletes.push(normProfile({name:n, sex:'M'})); save(); openAnagrafica(); } }}); };
+  ov.classList.add('show');
+}
+function openProfile(id){
+  const p=store.athletes.find(x=>x.id===id); if(!p){ openAnagrafica(); return; }
+  sheet.classList.add('tall');
+  let hist = p.history.length ? p.history.map(h=>{
+    const f = h.formula==='dots'?'DOTS':('IPF '+(h.eq?'Eq':'Cl'));
+    const parts=[]; if(h.squat!=null)parts.push('S '+fmt(h.squat)); if(h.panca!=null)parts.push('P '+fmt(h.panca)); if(h.stacco!=null)parts.push('St '+fmt(h.stacco));
+    return `<div class="hrec">
+      <div class="htop"><span class="hcomp">${h.compName}</span><span class="hdate">${fmtDate(h.date)}</span></div>
+      <div class="hmid"><span class="htot">${fmt(h.total)}<span class="u">kg</span></span>
+        <span class="hpts">${h.points!=null?fmt(h.points)+' pt':''}</span>
+        <span class="hbw">${h.bw!=null?fmt(h.bw)+' kg bw · ':''}${f}${h.done?'':' · prev.'}</span></div>
+      ${parts.length?`<div class="hlifts">${parts.join('  ·  ')}</div>`:''}</div>`;
+  }).join('') : `<div class="sub" style="padding:6px 2px">Nessuna gara nello storico. Usa “Salva risultato nello storico” dal menu durante una gara.</div>`;
+  const best = p.history.reduce((m,h)=> (h.points!=null && (m===null||h.points>m))?h.points:m, null);
+  const agN = ageAt(p.birth, todayISO());
+  const agf = ageFactor(agN);
+  const ageTxt = p.birth ? (agN+' anni'+(agf.cat?' · '+agf.cat+' ×'+agf.f.toFixed(3):' · Open')) : 'non impostata';
+  sheet.innerHTML=`<h3>${p.name}</h3><div class="sub">${p.sex==='M'?'Maschile':'Femminile'} · ${p.history.length} gare${best!=null?' · best '+fmt(best)+' pt':''}</div>
+    <div class="hwrap">${hist}</div>
+    <div class="mdiv"></div>
+    <button class="menuitem" id="pAdd">➕ &nbsp;Aggiungi a “${comp.name}”</button>
+    <button class="menuitem" id="pBirth">🎂 &nbsp;Data di nascita: ${p.birth?fmtDate(p.birth):'—'} <span style="color:var(--dim);font-weight:400">(${ageTxt})</span></button>
+    <button class="menuitem" id="pNote">📝 &nbsp;Nota tecnica</button>
+    <button class="menuitem" id="pRen">✎ &nbsp;Rinomina</button>
+    <button class="menuitem" id="pSex">⚥ &nbsp;Sesso: ${p.sex==='M'?'Maschile':'Femminile'}</button>
+    <button class="menuitem danger" id="pDel">🗑 &nbsp;Elimina dall'anagrafica</button>
+    <div class="sheetbtns"><div class="sbtn ghost" id="pBack">Indietro</div></div>`;
+  sheet.querySelector('#pBack').onclick=()=>{ closeSheet(); openAnagrafica(); };
+  sheet.querySelector('#pAdd').onclick=()=>{
+    if(roster.some(e=>e.athleteId===p.id)){ closeSheet(); openInfo('Già presente', '“'+p.name+'” è già in questa gara.'); return; }
+    const e=makeBlank(p.name); e.sex=p.sex; e.athleteId=p.id; roster.push(e); curAth=roster.length-1; closeSheet(); renderAll(); window.scrollTo({top:0});
+  };
+  sheet.querySelector('#pBirth').onclick=()=>openDate(p.birth||'2000-01-01', v=>{ p.birth=v||p.birth; save(); openProfile(id); renderAll(); });
+  sheet.querySelector('#pNote').onclick=()=>openTextArea({title:'Nota tecnica', sub:p.name+' · cue, comandi, promemoria', value:p.notes, onDone:v=>{ p.notes=v; save(); openProfile(id); renderAll(); }});
+  sheet.querySelector('#pRen').onclick=()=>{ openText({title:'Rinomina atleta', value:p.name, onDone:n=>{ if(n){ p.name=n; roster.forEach(e=>{ if(e.athleteId===p.id) e.name=n; }); save(); openProfile(id); renderAll(); } }}); };
+  sheet.querySelector('#pSex').onclick=()=>{ p.sex=p.sex==='M'?'F':'M'; roster.forEach(e=>{ if(e.athleteId===p.id) e.sex=p.sex; }); save(); openProfile(id); renderAll(); };
+  sheet.querySelector('#pDel').onclick=()=>{ openConfirm('Eliminare dall\'anagrafica?', '“'+p.name+'” e il suo storico verranno eliminati. Gli atleti già inseriti nelle gare restano.', 'Elimina', ()=>{ store.athletes=store.athletes.filter(x=>x.id!==id); roster.forEach(e=>{ if(e.athleteId===id) e.athleteId=null; }); save(); openAnagrafica(); }); };
+  ov.classList.add('show');
+}
+function openAddAthlete(){
+  const avail = store.athletes.filter(p=>!roster.some(e=>e.athleteId===p.id)).sort((a,b)=>a.name.localeCompare(b.name));
+  let rows = avail.map(p=>`<button class="menuitem complist" data-id="${p.id}"><span class="cmain">${p.name} <span style="color:var(--dim);font-weight:400">· ${p.sex}</span></span><span class="cdate">dall'anagrafica · ${p.history.length} gare</span></button>`).join('');
+  sheet.classList.add('tall');
+  sheet.innerHTML=`<h3>Aggiungi atleta</h3><div class="sub">Crea nuovo o scegli dall'anagrafica</div>
+    <button class="menuitem" id="nNew">＋ &nbsp;Nuovo atleta (compila il piano)</button>
+    ${rows?`<div class="mdiv"></div><div class="sub" style="padding:2px 2px 8px">Dall'anagrafica</div>${rows}`:''}
+    <div class="sheetbtns"><div class="sbtn ghost" id="nClose">Chiudi</div></div>`;
+  sheet.querySelector('#nClose').onclick=closeSheet;
+  sheet.querySelector('#nNew').onclick=()=>{ closeSheet(); openEditor(null); };
+  sheet.querySelectorAll('.complist').forEach(b=>b.onclick=()=>{
+    const p=store.athletes.find(x=>x.id===b.dataset.id);
+    const e=makeBlank(p.name); e.sex=p.sex; e.athleteId=p.id; roster.push(e); curAth=roster.length-1; closeSheet(); renderAll(); window.scrollTo({top:0});
+  });
   ov.classList.add('show');
 }
 
@@ -779,13 +1224,29 @@ function openGuide(){
     <h4>Totali</h4>
     <p><b>Previsto</b> = somma delle ultime prove delle opzioni scelte. <b>Fatto</b> = somma delle migliori alzate segnate come valide.</p>
     <h4>Classifica e punti</h4>
-    <p>Scegli la formula: <b>IPF GL</b> (Classic o Equipped) oppure <b>DOTS</b>. Vedi i punti previsti e fatti del tuo atleta, calcolati su peso e sesso.</p>
+    <p>Punteggio <b>IPF GL (Goodlift)</b>, usato sia da FIPL che da FIPE. Scegli la divisione <b>Classic</b> o <b>Equipped</b>. Vedi punti previsti e fatti su peso e sesso.</p>
+    <h4>Federazione della gara</h4>
+    <p>Alla creazione scegli <b>FIPL</b> o <b>FIPE</b>: entrambe usano regolamento IPF, punteggio IPF GL e coefficienti età IPF. La puoi cambiare dal menu Gare.</p>
+    <h4>Coefficienti età (Master / Junior)</h4>
+    <p>Imposta la <b>data di nascita</b> nel profilo (Anagrafica). Se l'atleta è Junior (14–23) o Master (40+), in classifica compaiono i <b>punti età</b> con il coefficiente IPF (Foster / McCulloch).</p>
+    <h4>Caricamento bilanciere (dischi)</h4>
+    <p>Tocca il peso <b>previsto</b> di un'alzata, o una riga di riscaldamento, per vedere <b>quali dischi</b> mettere per lato. Dal menu “Caricamento bilanciere” fai un calcolo libero. In Attrezzatura imposti bilanciere e collari (IPF: 20 + 2,5).</p>
+    <h4>Timer riscaldamento</h4>
+    <p>Il tasto <b>⏱</b> su un'alzata: inserisci quante alzate mancano prima del tuo atleta, parte un conto alla rovescia alla pedana e ti dice <b>quando iniziare la rampa</b>.</p>
+    <h4>Nota tecnica</h4>
+    <p>Sotto peso e sesso c'è la <b>nota</b> dell'atleta (cue, comandi): resta salvata nel suo profilo, gara dopo gara.</p>
     <h4>Superare l'avversario</h4>
     <p>Inserisci il <b>Totale avversario</b> aggiornandolo a ogni sua chiamata. Se è nella <b>tua stessa categoria</b> lascia vuoto il peso: vince chi fa più totale e il tool ti dice quanto ti serve. Se è in <b>un'altra categoria</b> (best lifter) metti anche il suo <b>peso</b>: il confronto passa ai punti. Se hai già chiuso due alzate, ti dice quanto <b>chiamare sull'ultima</b> per stargli davanti.</p>
+    <h4>Gare</h4>
+    <p>Tocca il nome della gara in alto a destra (o <b>menu ⋯ → Gare</b>) per cambiare gara, crearne una nuova, rinominarla o impostarne la data. Ogni gara tiene i suoi atleti, le sue impostazioni e la sua classifica, salvati nel tempo.</p>
+    <h4>Anagrafica atleti</h4>
+    <p><b>Menu ⋯ → Anagrafica</b>: l'elenco di tutti i tuoi atleti con il loro <b>storico personale</b> (ogni gara con totale, punti e alzate). Da un profilo puoi aggiungere l'atleta alla gara attiva. Quando crei un atleta, il suo profilo nasce da solo.</p>
+    <h4>Salvare un risultato nello storico</h4>
+    <p>A fine gara, col pulsante <b>📌 Salva nello storico</b> (in fondo alla classifica o nel menu) registri totale e punti dell'atleta nel suo profilo. Risalvando la stessa gara, il dato si aggiorna.</p>
     <h4>Gestione (menu ⋯)</h4>
-    <p>Aggiungi, rinomina o elimina un atleta, cambia il nome del team/gara, oppure svuota la lista.</p>
+    <p>Aggiungi, modifica, rinomina o togli un atleta dalla gara, gestisci gare e anagrafica.</p>
     <h4>Salvataggio</h4>
-    <p>Tutto si salva <b>sul tuo telefono</b>. I dati non sono condivisi: ogni coach ha i propri atleti.</p>
+    <p>Tutto si salva <b>sul tuo telefono</b>. I dati non sono condivisi: ogni coach ha i propri atleti, gare e storici.</p>
   </div>
   <div class="sheetbtns"><div class="sbtn ok" id="gClose">Ho capito</div></div>`;
   sheet.querySelector('#gClose').onclick=closeSheet;
@@ -793,7 +1254,7 @@ function openGuide(){
 }
 
 document.getElementById('menuBtn').onclick=openMenu;
-document.getElementById('teamLbl').onclick=()=>openText({title:'Nome team / gara', value:team, placeholder:'Es. Team Rossi — Regionali', onDone:n=>{ team=n||team; renderAll(); }});
+document.getElementById('teamLbl').onclick=openComps;
 document.getElementById('resetBtn').onclick=()=>{
   const a=roster[curAth];
   LIFTS.forEach(l=>{ a[l.key].marks=[0,0,0]; a[l.key].over=[null,null,null]; });
