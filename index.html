@@ -163,8 +163,11 @@
   .ftot div .k{font-size:9px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted);}
   .ftot div .v{font-family:'Bebas Neue'; font-size:30px; line-height:.9; letter-spacing:1px;}
   .ftot .proj .v{color:var(--blue);} .ftot .made .v{color:var(--lime);}
-  .reset{margin-left:auto; background:var(--panel); border:1px solid var(--line); color:var(--muted); padding:9px 14px; border-radius:10px; font-weight:700; font-size:12px; cursor:pointer; letter-spacing:.5px;}
+  .reset{background:var(--panel); border:1px solid var(--line); color:var(--muted); padding:9px 12px; border-radius:10px; font-weight:700; font-size:12px; cursor:pointer; letter-spacing:.5px;}
+  #undoBtn{margin-left:auto;}
   .reset:active{background:var(--panel2);}
+  .reset:disabled{opacity:.38; cursor:default;}
+  .reset.armed{color:var(--accent); border-color:#ff5a1f55;}
   .hint{font-size:11px; color:var(--dim); padding:10px 2px 0; text-align:center;}
 
   /* MODALS */
@@ -202,7 +205,24 @@
   .hmid .htot .u{font-family:'Saira'; font-size:11px; color:var(--dim); margin-left:2px;}
   .hmid .hpts{font-family:'Bebas Neue'; font-size:18px; letter-spacing:1px; color:var(--blue);}
   .hmid .hbw{font-size:11px; color:var(--muted); margin-left:auto;}
-  .hlifts{margin-top:5px; font-size:12px; color:var(--muted);}
+  .hlifts{margin-top:5px; font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap;}
+  .hlifts .hl{color:var(--text);}
+  .hmid .delta{margin-left:auto; font-size:11px; font-weight:800; padding:2px 8px; border-radius:6px;}
+  .hmid .delta.up{color:var(--lime); background:#c6ff3a1a;}
+  .hmid .delta.down{color:#ff8a8a; background:#ff3b4614;}
+  .hmeta{font-size:11px; color:var(--muted); margin-top:4px;}
+  .hmeta .hstat{color:var(--dim);}
+  .henote{margin-top:6px; font-size:12px; color:#cfd3da; font-style:italic; border-left:2px solid var(--accent); padding-left:8px;}
+  .prrow{display:flex; gap:6px; margin:4px 0 10px;}
+  .prc{flex:1; background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:7px 4px; text-align:center;}
+  .prc.tot{border-color:var(--lime);}
+  .prc .prk{font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase;}
+  .prc .prv{font-family:'Bebas Neue'; font-size:21px; letter-spacing:1px; color:var(--text);}
+  .prc.tot .prv{color:var(--lime);}
+  .sparkwrap{background:var(--panel2); border:1px solid var(--line); border-radius:11px; padding:10px 12px; margin-bottom:10px;}
+  .sparkbars{display:flex; align-items:flex-end; gap:4px; height:40px;}
+  .sparkbars .spk{flex:1; border-radius:2px 2px 0 0; min-width:4px;}
+  .sparklbl{font-size:10.5px; color:var(--muted); margin-top:6px; text-align:center;}
   .savehist{margin-top:12px; width:100%; padding:11px; border-radius:11px; background:#c6ff3a14; border:1px solid #c6ff3a44; color:var(--lime); font-weight:700; font-size:13.5px; cursor:pointer; text-align:center;}
 
   .lifthead .lifttimer{margin-left:auto; width:34px; height:34px; border-radius:10px; background:var(--panel2); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:16px; cursor:pointer;}
@@ -217,6 +237,10 @@
   .notechip .ni{font-size:14px;}
   .notechip .nt{font-size:13px; color:var(--text); line-height:1.35;}
   .notechip.empty .nt{color:var(--dim);}
+  .liftnote{display:flex; align-items:flex-start; gap:8px; margin:0 14px 13px; padding:9px 12px; background:var(--panel2); border:1px solid var(--line); border-radius:11px; cursor:pointer;}
+  .liftnote .ni{font-size:13px;}
+  .liftnote .nt{font-size:12.5px; color:var(--text); line-height:1.35;}
+  .liftnote.empty .nt{color:var(--dim);}
 
   .plbox{background:var(--panel2); border:1px solid var(--line); border-radius:14px; padding:14px; margin:4px 0 12px; text-align:center;}
   .plside{font-size:11px; text-transform:uppercase; letter-spacing:1.3px; color:var(--muted); margin-bottom:10px;}
@@ -225,10 +249,19 @@
   .pltxt{margin-top:11px; font-size:13px; color:var(--text);} .pltxt b{color:var(--accent);}
   .plwarn{margin-top:9px; font-size:12px; color:#ffb86b;}
   .plbar{margin-top:7px; font-size:11px; color:var(--dim);}
-  .tbig{font-family:'Bebas Neue'; font-size:70px; letter-spacing:3px; text-align:center; line-height:1; margin:6px 0;}
+  .tbig{font-family:'Bebas Neue'; font-size:76px; letter-spacing:3px; text-align:center; line-height:1; margin:10px 0 4px; font-variant-numeric:tabular-nums;}
   .tbig.go{color:var(--lime);}
   .tsub{text-align:center; font-size:13px; color:var(--muted); margin-bottom:4px;}
   .tstart{text-align:center; font-size:13.5px; color:var(--accent); margin:8px 0 2px; font-weight:700;}
+  .tstate{text-align:center; font-size:14px; color:var(--muted); min-height:20px; margin-bottom:10px;}
+  .tstate b{color:var(--accent);}
+  .tctl{display:flex; align-items:center; justify-content:center; gap:18px; margin:14px 0 4px;}
+  .tctl .tb{width:54px; height:54px; border-radius:50%; background:var(--panel2); border:1px solid var(--line); color:var(--text); font-size:30px; font-family:'Bebas Neue'; display:flex; align-items:center; justify-content:center; cursor:pointer; user-select:none;}
+  .tctl .tb:active{background:#ffffff1a;}
+  .tctl .tvwrap{min-width:92px; text-align:center;}
+  .tctl .tv{font-family:'Bebas Neue'; font-size:48px; line-height:1; color:var(--accent);}
+  .tctl .tvk{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px;}
+  .step.golive{background:#ff5a1f; color:#0c0d10; border-color:#ff5a1f;}
   .recedit{display:flex; align-items:center; gap:10px; background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:8px; cursor:pointer;}
   .recedit .rk{font-size:13px; color:var(--muted); flex:1;}
   .recedit .rv{font-family:'Bebas Neue'; font-size:22px; letter-spacing:1px; color:var(--accent);} .recedit .rv.none{color:var(--dim);}
@@ -273,6 +306,45 @@
   .edwurow .del{flex:0 0 auto; width:36px; height:36px; border-radius:9px; background:#ff3b461a; border:1px solid #ff3b4655; color:var(--red); font-size:17px; display:flex; align-items:center; justify-content:center; cursor:pointer;}
   .edadd{margin-top:3px; width:100%; padding:11px; border-radius:11px; background:var(--panel2); border:1px dashed var(--line); color:var(--accent); font-weight:700; font-size:13px; cursor:pointer; text-align:center;}
   .edhint{font-size:11.5px; color:var(--dim); margin-top:8px; line-height:1.45;}
+
+  /* RECAP GARA */
+  .recap{position:fixed; inset:0; z-index:300; background:#07080a; display:none; flex-direction:column;}
+  .recap.show{display:flex;}
+  .recap .rtop{display:flex; align-items:center; gap:10px; padding:11px 14px; background:#07080a;}
+  .recap .rtop .b{padding:9px 15px; border-radius:10px; font-weight:800; font-size:13px; cursor:pointer; border:1px solid var(--line); background:var(--panel2); color:var(--muted);}
+  .recap .rtop .hint{flex:1; text-align:center; font-size:12px; color:var(--muted);}
+  .recap .rbody{flex:1; overflow-y:auto; padding:0 12px 24px; display:flex; flex-direction:column; align-items:center;}
+  .story{width:100%; max-width:430px; background:linear-gradient(170deg,#15171d 0%,#0c0d10 60%); border:1px solid var(--line); border-radius:22px; overflow:hidden; position:relative;}
+  .story .grid{position:absolute; inset:0; background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px); background-size:26px 26px;}
+  .story .z{position:relative; z-index:2; padding:22px 22px 24px;}
+  .story .shead{display:flex; align-items:center; justify-content:space-between;}
+  .story .brand{font-family:'Bebas Neue'; font-size:26px; letter-spacing:3px; color:#f2f0ea;}
+  .story .brand .dot{color:var(--accent);}
+  .story .meet{text-align:right; font-size:11px; color:var(--muted); line-height:1.3;}
+  .story .meet b{color:var(--accent); font-family:'Bebas Neue'; font-size:14px; letter-spacing:1px; display:block;}
+  .story .athname{font-family:'Bebas Neue'; font-size:46px; letter-spacing:1px; line-height:.95; margin:16px 0 2px; color:#fff;}
+  .story .sub2{font-size:12px; color:var(--muted); margin-bottom:14px;}
+  .story .sub2 b{color:var(--text);}
+  .story .lifts{display:flex; flex-direction:column; gap:9px;}
+  .story .lrow{display:flex; align-items:center; gap:12px; background:#ffffff08; border:1px solid var(--line); border-radius:13px; padding:12px 14px;}
+  .story .lrow .lbar{width:6px; height:34px; border-radius:3px; flex:0 0 auto;}
+  .story .lrow .lk{font-family:'Bebas Neue'; font-size:17px; letter-spacing:1.5px; color:var(--muted); width:72px;}
+  .story .lrow .lw{font-family:'Bebas Neue'; font-size:30px; letter-spacing:1px; color:#fff;}
+  .story .lrow .lw .u{font-family:'Saira'; font-size:12px; color:var(--dim); margin-left:3px;}
+  .story .lrow .pr{margin-left:auto; font-size:10px; font-weight:800; letter-spacing:.5px; color:#0c0d10; background:var(--lime); padding:3px 9px; border-radius:6px;}
+  .story .lrow .xn{margin-left:auto; font-size:11px; color:var(--red); font-weight:700;}
+  .story .totbox{margin-top:16px; background:linear-gradient(90deg,#c6ff3a18,#41c7f712); border:1px solid #c6ff3a44; border-radius:15px; padding:14px 16px; display:flex; align-items:baseline; justify-content:space-between;}
+  .story .totbox .tl{font-family:'Bebas Neue'; font-size:20px; letter-spacing:2px; color:var(--muted);}
+  .story .totbox .tv{font-family:'Bebas Neue'; font-size:52px; letter-spacing:1px; color:var(--lime); line-height:.9;}
+  .story .totbox .tv .u{font-family:'Saira'; font-size:15px; color:var(--dim);}
+  .story .totpr{margin-top:9px; text-align:center; font-size:12px; font-weight:800; color:var(--lime); letter-spacing:.5px;}
+  .story .enote{margin-top:14px; font-size:13px; color:#cfd3da; font-style:italic; border-left:3px solid var(--accent); padding:4px 0 4px 11px;}
+  .story .sfoot{margin-top:18px; text-align:center; font-size:10px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase;}
+  .teamrecap .trow{display:flex; align-items:center; gap:10px; background:#ffffff08; border:1px solid var(--line); border-radius:12px; padding:11px 13px; margin-bottom:8px;}
+  .teamrecap .trow .tn{font-weight:700; color:#fff; flex:1; font-size:14px;}
+  .teamrecap .trow .tt{font-family:'Bebas Neue'; font-size:24px; letter-spacing:1px; color:var(--lime);}
+  .teamrecap .trow .tt .u{font-family:'Saira'; font-size:11px; color:var(--dim);}
+  .teamrecap .trow .tp{font-size:10px; font-weight:800; color:#0c0d10; background:var(--lime); padding:2px 7px; border-radius:5px; margin-left:8px;}
 </style>
 </head>
 <body>
@@ -303,12 +375,14 @@
       <div class="proj"><div class="k">Previsto</div><div class="v" id="fProj">—</div></div>
       <div class="made"><div class="k">Fatto</div><div class="v" id="fMade">—</div></div>
     </div>
-    <button class="reset" id="resetBtn">Azzera prove</button>
+    <button class="reset" id="undoBtn" disabled>↩︎ Annulla</button>
+    <button class="reset" id="resetBtn">Azzera</button>
   </div>
 </footer>
 
 <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 <div class="editor" id="editor"></div>
+<div class="recap" id="recap"></div>
 
 <script>
 const LIFTS = [
@@ -377,6 +451,7 @@ const DEFAULTS = [
 ];
 
 /* ---------- PERSISTENZA ---------- */
+const APP_VERSION='4.0';
 const LSKEY='pedana_v3', OLDKEY='pedana_v2';
 function save(){ try{ store.curComp=comp.id; store.curAth=curAth; localStorage.setItem(LSKEY, JSON.stringify(store)); }catch(e){} }
 function loadRaw(k){ try{ const s=localStorage.getItem(k); return s?JSON.parse(s):null; }catch(e){ return null; } }
@@ -402,6 +477,7 @@ function normAth(a){
   a.sex = (a.sex==='F')?'F':'M';
   a.oppTotal = (typeof a.oppTotal==='number')? a.oppTotal : null;
   a.oppBw = (typeof a.oppBw==='number')? a.oppBw : null;
+  a.endNote = typeof a.endNote==='string' ? a.endNote : '';
   a.records = (a.records && typeof a.records==='object') ? a.records : {};
   ['squat','panca','stacco','total'].forEach(k=>{ if(typeof a.records[k]!=='number') a.records[k]=null; });
   LIFTS.forEach(L=> a[L.key]=normLift(a[L.key]));
@@ -409,7 +485,7 @@ function normAth(a){
   return a;
 }
 function makeBlank(name){
-  const a={id:uid(), athleteId:null, name:name||'ATLETA', bw:null, sex:'M', oppTotal:null, oppBw:null};
+  const a={id:uid(), athleteId:null, name:name||'ATLETA', bw:null, sex:'M', oppTotal:null, oppBw:null, endNote:''};
   LIFTS.forEach(L=>{ a[L.key]={attempts:[[null,null,null],[null,null,null],[null,null,null]], warmup:[]}; });
   return normAth(a);
 }
@@ -419,7 +495,9 @@ function normProfile(p){
   p.sex = (p.sex==='F')?'F':'M';
   p.history = Array.isArray(p.history)? p.history : [];
   p.birth = p.birth || null;        // data di nascita ISO (per coeff. età)
-  p.notes = typeof p.notes==='string' ? p.notes : '';
+  p.notes = typeof p.notes==='string' ? p.notes : '';   // legacy (nota generale)
+  p.liftNotes = (p.liftNotes && typeof p.liftNotes==='object') ? p.liftNotes : {};
+  LIFTS.forEach(L=>{ if(typeof p.liftNotes[L.key]!=='string') p.liftNotes[L.key]=''; });
   return p;
 }
 function normComp(c){
@@ -460,6 +538,7 @@ if(_v3 && Array.isArray(_v3.comps) && _v3.comps.length){
   store = (_v2 && Array.isArray(_v2.roster) && _v2.roster.length) ? migrateV2(_v2) : freshStore();
 }
 store.equip = Object.assign({bar:20, collar:2.5}, store.equip||{});
+store.version = APP_VERSION;
 
 /* ---------- ALIAS GARA ATTIVA ---------- */
 let comp, roster, settings, team, curAth;
@@ -591,12 +670,11 @@ function renderBodyweight(){
   sx.innerHTML=`<span class="k">Sesso</span><span class="v" style="color:var(--accent)">${a.sex}</span>`;
   sx.onclick=()=>{ a.sex = a.sex==='M'?'F':'M'; syncProfile(a); renderAll(); };
   bar.appendChild(sx);
-  // nota tecnica (dal profilo)
-  const prof=profileOf(a);
-  const note = prof ? (prof.notes||'') : '';
-  const nc=document.createElement('div'); nc.className='notechip'+(note?'':' empty');
-  nc.innerHTML = note ? `<span class="ni">📝</span><span class="nt">${note.replace(/</g,'&lt;')}</span>` : `<span class="ni">📝</span><span class="nt">＋ nota tecnica</span>`;
-  nc.onclick=()=>{ const p=ensureProfile(a); openTextArea({title:'Nota tecnica', sub:a.name+' · cue, comandi, promemoria', value:p.notes, onDone:v=>{ p.notes=v; save(); renderAll(); }}); };
+  // nota fine gara (per gara/atleta)
+  const en = a.endNote||'';
+  const nc=document.createElement('div'); nc.className='notechip'+(en?'':' empty');
+  nc.innerHTML = en ? `<span class="ni">🏁</span><span class="nt"><b>Fine gara:</b> ${en.replace(/</g,'&lt;')}</span>` : `<span class="ni">🏁</span><span class="nt">＋ nota fine gara (com'è andata, cosa migliorare)</span>`;
+  nc.onclick=()=>openTextArea({title:'Nota fine gara', sub:a.name+' · '+comp.name, placeholder:"Com'è andata, cosa curare…", value:a.endNote, onDone:v=>{ a.endNote=v; renderAll(); }});
   bar.appendChild(nc);
 }
 
@@ -656,7 +734,7 @@ function renderLifts(){
       const stTxt = w===null?'' : mk===1?'✓ valida':mk===2?'✗ nulla':'';
       const tag = custom?'<span class="tag"> • reale</span>':'';
       el.innerHTML=`<div class="ai">${NTH[i]} prova${tag}</div><div class="aw">${fmt(w)}</div><div class="ast">${stTxt}</div><div class="edit">✎</div>`;
-      if(w!==null) el.onclick=()=>{l.marks[i]=(l.marks[i]+1)%3; renderAll();};
+      if(w!==null) el.onclick=()=>{ lastMark={aid:a.id, lift:L.key, i:i, prev:l.marks[i]}; l.marks[i]=(l.marks[i]+1)%3; renderAll();};
       el.querySelector('.edit').onclick=(e)=>{
         e.stopPropagation();
         const planned=l.attempts[l.opt][i];
@@ -686,6 +764,14 @@ function renderLifts(){
     if(l.flag){const f=document.createElement('div'); f.className='flag'; f.textContent='⚠ '+l.flag; wl.appendChild(f);}
     wu.appendChild(wl);
     card.appendChild(wu);
+
+    // nota tecnica per alzata (dal profilo)
+    const prof=profileOf(a);
+    const ln = prof ? (prof.liftNotes[L.key]||'') : '';
+    const nr=document.createElement('div'); nr.className='liftnote'+(ln?'':' empty');
+    nr.innerHTML = ln ? `<span class="ni">📝</span><span class="nt">${ln.replace(/</g,'&lt;')}</span>` : `<span class="ni">📝</span><span class="nt">＋ nota tecnica ${L.name.toLowerCase()}</span>`;
+    nr.onclick=()=>{ const p=ensureProfile(a); openTextArea({title:'Nota tecnica — '+L.name, sub:a.name+' · cue, comandi, setup', value:p.liftNotes[L.key], onDone:v=>{ p.liftNotes[L.key]=v; save(); renderAll(); }}); };
+    card.appendChild(nr);
 
     root.appendChild(card);
   });
@@ -783,7 +869,18 @@ function renderRank(){
   const sb=pts.querySelector('#setbw'); if(sb) sb.onclick=()=>openNum({title:'Peso corporeo', sub:a.name+' · serve per i punti', value:a.bw, clearLabel:'Cancella', onDone:v=>{ a.bw=v; renderAll(); }});
 }
 
-function renderAll(){ renderTeam(); renderAthletes(); renderBodyweight(); renderMaster(); renderTotals(); renderLifts(); renderRank(); save(); }
+let lastMark=null;
+function updateUndo(){
+  const b=document.getElementById('undoBtn'); if(!b) return;
+  const ok = lastMark && roster.some(e=>e.id===lastMark.aid);
+  b.disabled=!ok; b.classList.toggle('armed', !!ok);
+}
+function doUndo(){
+  if(!lastMark) return;
+  const e=roster.find(x=>x.id===lastMark.aid); if(!e){ lastMark=null; updateUndo(); return; }
+  e[lastMark.lift].marks[lastMark.i]=lastMark.prev; lastMark=null; renderAll();
+}
+function renderAll(){ renderTeam(); renderAthletes(); renderBodyweight(); renderMaster(); renderTotals(); renderLifts(); renderRank(); updateUndo(); save(); }
 
 /* ---------- AZIONI ATLETI ---------- */
 function addAthlete(name){
@@ -946,30 +1043,50 @@ function openEquip(after){
 function openTimer(L){
   const a=roster[curAth];
   let sets=0; (a[L.key].warmup||[]).forEach(row=>{ if(a[L.key].opt===2 && ('opz3' in row) && row.opz3===null) return; sets++; });
-  let n=3, sec=60; const minPerSet=150;
-  let remaining=n*sec, running=false;
-  function mmss(s){ s=Math.max(0,Math.round(s)); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
-  function draw(){
-    const warmNeed=sets*minPerSet;
-    const go = remaining<=warmNeed && remaining>0;
-    sheet.innerHTML=`<h3>Timer riscaldamento — ${L.name}</h3><div class="sub">Quante alzate mancano prima del tuo atleta</div>
-      <div class="recedit" id="tN"><span class="rk">Alzate prima di te</span><span class="rv">${n}</span></div>
-      <div class="recedit" id="tS"><span class="rk">Secondi per alzata</span><span class="rv">${sec}s</span></div>
-      <div class="tbig ${go?'go':''}" id="tBig">${mmss(remaining)}</div>
-      <div class="tsub">stima tempo alla pedana</div>
-      ${sets?`<div class="tstart">${go?'▶ INIZIA LA RAMPA ORA':'Rampa: '+sets+' serie · parti quando mancano '+mmss(warmNeed)}</div>`:`<div class="tstart" style="color:var(--dim)">Nessuna serie di riscaldamento impostata per questa opzione</div>`}
-      <div class="steps">
-        <div class="step" id="tReset">↺ reset</div>
-        <div class="step plus" id="tRun" style="flex:2">${running?'⏸ Pausa':'▶ Avvia'}</div>
-      </div>
-      <div class="sheetbtns"><div class="sbtn ok" id="tClose">Chiudi</div></div>`;
-    sheet.querySelector('#tN').onclick=()=>openNum({title:'Alzate prima di te', sub:'quante alzate mancano', value:n, onDone:v=>{ if(v!=null){n=Math.max(0,Math.round(v)); if(!running) remaining=n*sec;} draw(); }});
-    sheet.querySelector('#tS').onclick=()=>openNum({title:'Secondi per alzata', sub:'di solito ~60s', value:sec, onDone:v=>{ if(v!=null){sec=Math.max(10,Math.round(v)); if(!running) remaining=n*sec;} draw(); }});
-    sheet.querySelector('#tReset').onclick=()=>{ running=false; if(_timerInt){clearInterval(_timerInt);_timerInt=null;} remaining=n*sec; draw(); };
-    sheet.querySelector('#tRun').onclick=()=>{ running=!running; if(running){ _timerInt=setInterval(()=>{ remaining--; if(remaining<=0){remaining=0; running=false; clearInterval(_timerInt); _timerInt=null;} const el=sheet.querySelector('#tBig'); if(el){ el.textContent=mmss(remaining); el.classList.toggle('go', remaining<=sets*minPerSet && remaining>0);} else { clearInterval(_timerInt); _timerInt=null; } }, 1000); } else { if(_timerInt){clearInterval(_timerInt);_timerInt=null;} } draw(); };
-    sheet.querySelector('#tClose').onclick=closeSheet;
+  const warmSec = sets*150;        // ~2,5 min a serie di rampa
+  let mins = 8;                    // minuti stimati alla pedana
+  let remaining = mins*60;
+  let running=false;
+  if(_timerInt){ clearInterval(_timerInt); _timerInt=null; }
+  const mmss=s=>{ s=Math.max(0,Math.round(s)); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); };
+  sheet.innerHTML=`<h3>Timer riscaldamento — ${L.name}</h3><div class="sub">Minuti stimati prima che il tuo atleta vada in pedana (≈ 1 min per alzata)</div>
+    <div class="tctl">
+      <div class="tb" id="tMinus">−</div>
+      <div class="tvwrap"><div class="tv" id="tMinsVal">${mins}</div><div class="tvk">minuti</div></div>
+      <div class="tb" id="tPlus">+</div>
+    </div>
+    <div class="tbig" id="tBig">${mmss(remaining)}</div>
+    <div class="tstate" id="tState"></div>
+    <div class="steps">
+      <div class="step" id="tReset">↺ reset</div>
+      <div class="step plus" id="tRun" style="flex:2">▶ Avvia</div>
+    </div>
+    <div class="sheetbtns"><div class="sbtn ok" id="tClose">Chiudi</div></div>`;
+  const bigEl=sheet.querySelector('#tBig'), stateEl=sheet.querySelector('#tState'),
+        runBtn=sheet.querySelector('#tRun'), minsEl=sheet.querySelector('#tMinsVal');
+  function paint(){
+    bigEl.textContent=mmss(remaining);
+    const go = warmSec>0 && remaining<=warmSec && remaining>0;
+    bigEl.classList.toggle('go', go);
+    if(remaining<=0) stateEl.innerHTML='🎯 <b>ALLA PEDANA — VAI!</b>';
+    else if(go) stateEl.innerHTML='🔥 <b>INIZIA LA RAMPA ORA</b>';
+    else stateEl.innerHTML = sets ? ('Rampa: <b>'+sets+' serie</b> · parti a <b>'+mmss(warmSec)+'</b>') : 'Imposta i minuti e premi Avvia';
+    minsEl.textContent=mins;
+    runBtn.textContent = running?'⏸ Pausa':'▶ Avvia';
+    runBtn.classList.toggle('golive', running);
   }
-  draw(); ov.classList.add('show');
+  function setRun(r){
+    running=r;
+    if(_timerInt){ clearInterval(_timerInt); _timerInt=null; }
+    if(running){ _timerInt=setInterval(()=>{ remaining--; if(remaining<=0){ remaining=0; running=false; clearInterval(_timerInt); _timerInt=null; } paint(); }, 1000); }
+    paint();
+  }
+  sheet.querySelector('#tMinus').onclick=()=>{ mins=Math.max(0,mins-1); remaining = running ? Math.max(0,remaining-60) : mins*60; paint(); };
+  sheet.querySelector('#tPlus').onclick=()=>{ mins=mins+1; remaining = running ? remaining+60 : mins*60; paint(); };
+  runBtn.onclick=()=>setRun(!running);
+  sheet.querySelector('#tReset').onclick=()=>{ setRun(false); remaining=mins*60; paint(); };
+  sheet.querySelector('#tClose').onclick=closeSheet;
+  paint(); ov.classList.add('show');
 }
 
 function openNum(opts){
@@ -1021,8 +1138,10 @@ function openMenu(){
   const a=roster[curAth];
   sheet.innerHTML=`<h3>Gestione</h3><div class="sub">${comp.name} · ${roster.length} atleti</div>
     <button class="menuitem" id="mComps">🏆 &nbsp;Gare — cambia / nuova</button>
+    <button class="menuitem" id="mTeam">👥 &nbsp;Riepilogo squadra</button>
     <button class="menuitem" id="mAnag">👤 &nbsp;Anagrafica atleti</button>
     <button class="menuitem" id="mSaveHist">📌 &nbsp;Salva risultato di “${a.name}” nello storico</button>
+    <button class="menuitem" id="mRecap">📣 &nbsp;Recap gara (per social / storia)</button>
     <button class="menuitem" id="mPlates">🏋 &nbsp;Caricamento bilanciere</button>
     <div class="mdiv"></div>
     <button class="menuitem" id="mGuide">❓ &nbsp;Guida — come si usa</button>
@@ -1031,11 +1150,16 @@ function openMenu(){
     <button class="menuitem" id="mRename">✎ &nbsp;Rinomina “${a.name}”</button>
     <button class="menuitem danger" id="mDel">🗑 &nbsp;Togli “${a.name}” da questa gara</button>
     <button class="menuitem" id="mClear">⌫ &nbsp;Svuota lista di questa gara</button>
+    <div class="mdiv"></div>
+    <button class="menuitem" id="mBackup">💾 &nbsp;Backup dati (Esporta / Importa)</button>
+    <div class="sub" style="text-align:center; margin:10px 0 2px; color:var(--dim)">PEDANA · versione ${APP_VERSION}</div>
     <div class="sheetbtns"><div class="sbtn ghost" id="mClose">Chiudi</div></div>`;
   sheet.querySelector('#mClose').onclick=closeSheet;
   sheet.querySelector('#mComps').onclick=()=>{ closeSheet(); openComps(); };
+  sheet.querySelector('#mTeam').onclick=()=>{ closeSheet(); openTeamSummary(); };
   sheet.querySelector('#mAnag').onclick=()=>{ closeSheet(); openAnagrafica(); };
   sheet.querySelector('#mSaveHist').onclick=()=>{ closeSheet(); saveToHistory(curAth, true); };
+  sheet.querySelector('#mRecap').onclick=()=>{ closeSheet(); openRecapMenu(); };
   sheet.querySelector('#mPlates').onclick=()=>{ closeSheet(); openPlates(null, 'Calcolo libero'); };
   sheet.querySelector('#mGuide').onclick=()=>{ closeSheet(); openGuide(); };
   sheet.querySelector('#mAdd').onclick=()=>{ closeSheet(); openAddAthlete(); };
@@ -1043,7 +1167,59 @@ function openMenu(){
   sheet.querySelector('#mRename').onclick=()=>{ closeSheet(); openText({title:'Rinomina atleta', value:a.name, onDone:n=>{ if(n){ a.name=n; syncProfile(a); renderAll(); } }}); };
   sheet.querySelector('#mDel').onclick=()=>{ closeSheet(); openConfirm('Togliere atleta dalla gara?', '“'+a.name+'” verrà rimosso da questa gara. Lo storico personale resta in anagrafica.', 'Togli', ()=>removeAthlete(curAth)); };
   sheet.querySelector('#mClear').onclick=()=>{ closeSheet(); openConfirm('Svuotare la lista?', 'Resta un atleta vuoto da compilare. Le modifiche di questa gara andranno perse.', 'Svuota', ()=>{ roster.length=0; roster.push(makeBlank('ATLETA 1')); curAth=0; renderAll(); }); };
+  sheet.querySelector('#mBackup').onclick=()=>{ closeSheet(); openBackup(); };
   ov.classList.add('show');
+}
+
+/* ---------- BACKUP (Export / Import) ---------- */
+function applyImport(obj){
+  if(!obj || !Array.isArray(obj.comps) || !obj.comps.length){ openInfo('Backup non valido', 'Il file non sembra un backup PEDANA.'); return; }
+  store=obj;
+  store.athletes = Array.isArray(store.athletes)? store.athletes : [];
+  store.comps.forEach(normComp); store.athletes.forEach(normProfile);
+  store.equip = Object.assign({bar:20, collar:2.5}, store.equip||{});
+  store.version = APP_VERSION;
+  if(!store.comps.some(c=>c.id===store.curComp)) store.curComp=store.comps[0].id;
+  curAth=0; setActiveComp(); save(); renderAll();
+  openInfo('Backup importato ✓', store.comps.length+' gare e '+store.athletes.length+' atleti ripristinati.');
+}
+function openBackup(){
+  const json=JSON.stringify(store);
+  sheet.innerHTML=`<h3>Backup dati</h3><div class="sub">Salva o ripristina gare, atleti e storici. Utile per cambio telefono.</div>
+    <button class="menuitem" id="bkDown">⬇️ &nbsp;Esporta (scarica file .json)</button>
+    <button class="menuitem" id="bkCopy">📋 &nbsp;Copia backup negli appunti</button>
+    <div class="mdiv"></div>
+    <button class="menuitem" id="bkFile">⬆️ &nbsp;Importa da file .json</button>
+    <button class="menuitem" id="bkPaste">📥 &nbsp;Importa incollando il testo</button>
+    <input type="file" id="bkInput" accept="application/json,.json" style="display:none">
+    <div class="sheetbtns"><div class="sbtn ghost" id="bkClose">Chiudi</div></div>`;
+  sheet.querySelector('#bkClose').onclick=closeSheet;
+  sheet.querySelector('#bkDown').onclick=()=>{
+    try{ const blob=new Blob([json],{type:'application/json'}); const url=URL.createObjectURL(blob);
+      const a=document.createElement('a'); a.href=url; a.download='pedana-backup-'+todayISO()+'.json'; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),1500);
+    }catch(e){ openInfo('Non riuscito','Usa “Copia negli appunti”.'); }
+  };
+  sheet.querySelector('#bkCopy').onclick=()=>{
+    const done=()=>openInfo('Copiato ✓','Incolla il testo in una nota o email per conservarlo.');
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(json).then(done).catch(()=>openPasteExport(json)); }
+    else openPasteExport(json);
+  };
+  sheet.querySelector('#bkFile').onclick=()=>sheet.querySelector('#bkInput').click();
+  sheet.querySelector('#bkInput').onchange=(e)=>{
+    const f=e.target.files[0]; if(!f) return;
+    const r=new FileReader(); r.onload=()=>{ try{ const obj=JSON.parse(r.result); openConfirm('Importare questo backup?','Sostituirà TUTTI i dati attuali di questo telefono.','Importa',()=>applyImport(obj)); }catch(err){ openInfo('File non valido','Non è un backup leggibile.'); } }; r.readAsText(f);
+  };
+  sheet.querySelector('#bkPaste').onclick=()=>{
+    openTextArea({title:'Importa backup', sub:'Incolla qui il testo del backup', placeholder:'{...}', value:'', onDone:v=>{ if(!v) return; try{ const obj=JSON.parse(v); openConfirm('Importare questo backup?','Sostituirà TUTTI i dati attuali di questo telefono.','Importa',()=>applyImport(obj)); }catch(err){ openInfo('Testo non valido','Controlla di aver incollato tutto il backup.'); } }});
+  };
+  ov.classList.add('show');
+}
+function openPasteExport(json){
+  sheet.innerHTML=`<h3>Backup — copia manuale</h3><div class="sub">Seleziona tutto e copia, poi incollalo in una nota per conservarlo.</div>
+    <textarea class="tarea" style="min-height:160px" readonly>${json.replace(/</g,'&lt;')}</textarea>
+    <div class="sheetbtns"><div class="sbtn ok" id="peOk">Fatto</div></div>`;
+  sheet.querySelector('#peOk').onclick=closeSheet; ov.classList.add('show');
 }
 
 /* ---------- GARE ---------- */
@@ -1126,22 +1302,159 @@ function ensureProfile(a){
   if(a.athleteId){ const p=store.athletes.find(x=>x.id===a.athleteId); if(p) return p; }
   const p=normProfile({name:a.name, sex:a.sex}); store.athletes.push(p); a.athleteId=p.id; return p;
 }
+function liftStats(a, liftKey){ // conteggio prove valide/nulle
+  const l=a[liftKey]; let good=0, bad=0, done=0;
+  l.marks.forEach((m,idx)=>{ if(l.attempts[l.opt][idx]!==null || l.over[idx]!==null){ if(m===1){good++;done++;} else if(m===2){bad++;done++;} } });
+  return {good, bad, done};
+}
 function saveToHistory(i, announce){
   const a=roster[i];
   const p=ensureProfile(a);
-  let proj=0, made=0, anyMade=false; const bestLifts={};
-  LIFTS.forEach(l=>{ proj+=bestAttempt(a,l.key); const m=madeAttempt(a,l.key); bestLifts[l.key]=m; if(m!==null){made+=m; anyMade=true;} });
+  let proj=0, made=0, anyMade=false; const bestLifts={}; const stats={};
+  LIFTS.forEach(l=>{ proj+=bestAttempt(a,l.key); const m=madeAttempt(a,l.key); bestLifts[l.key]=m; stats[l.key]=liftStats(a,l.key); if(m!==null){made+=m; anyMade=true;} });
   const total = anyMade? made : proj;
   const pts = pointsFor(total, a);
-  const rec = { compId:comp.id, compName:comp.name, date:comp.date, bw:a.bw,
+  const prof = p; const age = ageAt(prof.birth, comp.date); const af = ageFactor(age);
+  const rec = { compId:comp.id, compName:comp.name, date:comp.date, bw:a.bw, fed:comp.fed,
     formula:comp.settings.formula, eq:comp.settings.eq,
     total:round1(total), done:anyMade, points:round1(pts),
-    squat:bestLifts.squat, panca:bestLifts.panca, stacco:bestLifts.stacco };
+    agePoints: (age!==null && af.cat && pts) ? round1(pts*af.f) : null, ageCat: af.cat||null, age: age,
+    squat:bestLifts.squat, panca:bestLifts.panca, stacco:bestLifts.stacco,
+    stats:stats, endNote:a.endNote||'' };
   p.history = p.history.filter(h=>h.compId!==comp.id);
   p.history.push(rec);
   p.history.sort((x,y)=> (y.date||'').localeCompare(x.date||''));
   save();
   if(announce) openInfo('Salvato nello storico', '“'+a.name+'” · '+comp.name+': totale '+fmt(round1(total))+' kg'+(pts?(' · '+fmt(round1(pts))+' pt'):'')+(anyMade?' (fatto)':' (previsto)')+'.');
+}
+// migliori di sempre (PR) dallo storico di un profilo
+function profilePRs(p){
+  const pr={squat:null, panca:null, stacco:null, total:null, points:null};
+  (p&&p.history||[]).forEach(h=>{
+    ['squat','panca','stacco','total'].forEach(k=>{ if(typeof h[k]==='number' && (pr[k]===null || h[k]>pr[k])) pr[k]=h[k]; });
+    if(typeof h.points==='number' && (pr.points===null || h.points>pr.points)) pr.points=h.points;
+  });
+  return pr;
+}
+function prevBest(p, key, exceptId){ let m=null; (p&&p.history||[]).forEach(h=>{ if(h.compId!==exceptId && typeof h[key]==='number' && (m===null||h[key]>m)) m=h[key]; }); return m; }
+
+/* ---------- RIEPILOGO SQUADRA ---------- */
+function nextCall(a){
+  for(const L of LIFTS){
+    const eff=effWeights(a,L.key); const l=a[L.key];
+    for(let i=0;i<3;i++){ if(eff[i]!==null && l.marks[i]===0) return {lift:L, n:i+1, w:eff[i]}; }
+  }
+  return null;
+}
+function openTeamSummary(){
+  sheet.classList.add('tall');
+  const rows=roster.map((a,i)=>{
+    let made=0, anyMade=false; LIFTS.forEach(L=>{ const m=madeAttempt(a,L.key); if(m!==null){made+=m;anyMade=true;} });
+    const nc=nextCall(a);
+    const ncTxt = nc ? `→ ${nc.lift.name} ${NTH[nc.n-1]} <b style="color:var(--text)">${fmt(nc.w)} kg</b>` : '<span style="color:var(--lime)">✓ gara completata</span>';
+    return `<button class="menuitem complist${i===curAth?' on':''}" data-i="${i}"><span class="cmain">${a.name} <span style="color:var(--lime);font-weight:800">${anyMade?fmt(round1(made))+' kg':'—'}</span></span><span class="cdate">${ncTxt}</span></button>`;
+  }).join('');
+  sheet.innerHTML=`<h3>Riepilogo squadra</h3><div class="sub">${comp.name} · ${roster.length} atleti · tocca per aprirne uno</div>
+    ${rows}
+    <div class="sheetbtns"><div class="sbtn ghost" id="tsClose">Chiudi</div></div>`;
+  sheet.querySelectorAll('.complist').forEach(b=>b.onclick=()=>{ curAth=+b.dataset.i; closeSheet(); renderAll(); window.scrollTo({top:0}); });
+  sheet.querySelector('#tsClose').onclick=closeSheet;
+  ov.classList.add('show');
+}
+
+/* ---------- RECAP GARA ---------- */
+const recapEl=document.getElementById('recap');
+function closeRecap(){ recapEl.classList.remove('show'); recapEl.innerHTML=''; }
+function openRecapMenu(){
+  sheet.classList.add('tall');
+  const rows = roster.map((a,i)=>`<button class="menuitem complist" data-i="${i}"><span class="cmain">${a.name}</span><span class="cdate">recap singolo per la storia</span></button>`).join('');
+  sheet.innerHTML=`<h3>Recap gara</h3><div class="sub">${comp.name} · scegli cosa condividere</div>
+    ${rows}
+    <div class="mdiv"></div>
+    <button class="menuitem" id="rcTeam">👥 &nbsp;Recap squadra (tutti)</button>
+    <div class="sheetbtns"><div class="sbtn ghost" id="rcClose">Chiudi</div></div>`;
+  sheet.querySelectorAll('.complist').forEach(b=>b.onclick=()=>{ closeSheet(); openRecap(+b.dataset.i); });
+  sheet.querySelector('#rcTeam').onclick=()=>{ closeSheet(); openTeamRecap(); };
+  sheet.querySelector('#rcClose').onclick=closeSheet;
+  ov.classList.add('show');
+}
+function openRecap(i){
+  const a=roster[i]; const prof=profileOf(a);
+  let made=0, proj=0, anyMade=false;
+  const items=LIFTS.map(L=>{
+    proj+=bestAttempt(a,L.key);
+    const m=madeAttempt(a,L.key); const val = m!==null ? m : bestAttempt(a,L.key);
+    if(m!==null){ made+=m; anyMade=true; }
+    const pb=prevBest(prof,L.key,comp.id);
+    const isPR = m!==null && m>0 && (pb===null || m>pb);
+    const isFail = m===null && liftStats(a,L.key).bad>0;
+    return {L, val, isPR, isFail, done:m!==null};
+  });
+  const total = anyMade? made : proj;
+  const pbTot = prevBest(prof,'total',comp.id);
+  const totPR = anyMade && total>0 && (pbTot===null || total>pbTot);
+  const age=prof?ageAt(prof.birth,comp.date):null; const af=ageFactor(age);
+  const catTxt = (age!==null && af.cat) ? (af.cat+' · '+age+' anni') : '';
+  const liftsHtml = items.map(it=>{
+    const wtxt = (it.val && it.val>0) ? fmt(round1(it.val)) : '—';
+    const badge = it.isPR ? `<span class="pr">🏆 PR</span>` : (it.isFail && (!it.val||it.val===0) ? `<span class="xn">nullo</span>` : '');
+    return `<div class="lrow"><span class="lbar" style="background:${it.L.color}"></span><span class="lk">${it.L.name}</span><span class="lw">${wtxt}<span class="u">${wtxt!=='—'?'kg':''}</span></span>${badge}</div>`;
+  }).join('');
+  recapEl.innerHTML=`
+    <div class="rtop">
+      <div class="b" id="rcBack">← Indietro</div>
+      <div class="hint">Fai uno screenshot per la storia 📸</div>
+      <div class="b" id="rcX">Chiudi</div>
+    </div>
+    <div class="rbody">
+      <div class="story"><div class="grid"></div><div class="z">
+        <div class="shead">
+          <div class="brand">PEDANA<span class="dot">.</span></div>
+          <div class="meet"><b>${comp.name}</b>${fmtDate(comp.date)} · ${comp.fed} · ${comp.settings.eq?'Equipped':'Classic'}</div>
+        </div>
+        <div class="athname">${a.name}</div>
+        <div class="sub2">${a.bw?('<b>'+fmt(a.bw)+' kg</b> · '):''}${a.sex==='M'?'Maschile':'Femminile'}${catTxt?(' · '+catTxt):''}</div>
+        <div class="lifts">${liftsHtml}</div>
+        <div class="totbox"><div class="tl">TOTALE</div><div class="tv">${total>0?fmt(round1(total)):'—'}<span class="u"> kg</span></div></div>
+        ${totPR?`<div class="totpr">🏆 NUOVO RECORD PERSONALE DI TOTALE</div>`:''}
+        ${a.endNote?`<div class="enote">“${a.endNote.replace(/</g,'&lt;')}”</div>`:''}
+        <div class="sfoot">PEDANA · gestione gara powerlifting</div>
+      </div></div>
+    </div>`;
+  recapEl.querySelector('#rcBack').onclick=()=>{ closeRecap(); openRecapMenu(); };
+  recapEl.querySelector('#rcX').onclick=closeRecap;
+  recapEl.classList.add('show'); window.scrollTo({top:0});
+}
+function openTeamRecap(){
+  const rows=roster.map(a=>{
+    let made=0, proj=0, anyMade=false;
+    LIFTS.forEach(L=>{ proj+=bestAttempt(a,L.key); const m=madeAttempt(a,L.key); if(m!==null){made+=m;anyMade=true;} });
+    const total=anyMade?made:proj;
+    const prof=profileOf(a); const pbTot=prevBest(prof,'total',comp.id);
+    const pr = anyMade && total>0 && (pbTot===null||total>pbTot);
+    return {name:a.name, total, pr};
+  }).sort((x,y)=>y.total-x.total);
+  const list=rows.map(r=>`<div class="trow"><span class="tn">${r.name}</span><span class="tt">${r.total>0?fmt(round1(r.total)):'—'}<span class="u"> kg</span></span>${r.pr?'<span class="tp">🏆 PR</span>':''}</div>`).join('');
+  recapEl.innerHTML=`
+    <div class="rtop">
+      <div class="b" id="rcBack">← Indietro</div>
+      <div class="hint">Fai uno screenshot per la storia 📸</div>
+      <div class="b" id="rcX">Chiudi</div>
+    </div>
+    <div class="rbody">
+      <div class="story teamrecap"><div class="grid"></div><div class="z">
+        <div class="shead">
+          <div class="brand">PEDANA<span class="dot">.</span></div>
+          <div class="meet"><b>${comp.name}</b>${fmtDate(comp.date)} · ${comp.fed} · ${comp.settings.eq?'Equipped':'Classic'}</div>
+        </div>
+        <div class="athname" style="font-size:34px; margin:16px 0 14px">RISULTATI SQUADRA</div>
+        ${list}
+        <div class="sfoot">PEDANA · gestione gara powerlifting</div>
+      </div></div>
+    </div>`;
+  recapEl.querySelector('#rcBack').onclick=()=>{ closeRecap(); openRecapMenu(); };
+  recapEl.querySelector('#rcX').onclick=closeRecap;
+  recapEl.classList.add('show'); window.scrollTo({top:0});
 }
 function openInfo(title, msg){
   sheet.innerHTML=`<h3>${title}</h3><div class="sub">${msg}</div><div class="sheetbtns"><div class="sbtn ok" id="iOk">OK</div></div>`;
@@ -1165,29 +1478,53 @@ function openAnagrafica(){
   sheet.querySelector('#aNew').onclick=()=>{ closeSheet(); openText({title:'Nuovo atleta', sub:'Nome · verrà aggiunto solo in anagrafica', placeholder:'Es. Luca', onDone:n=>{ if(n){ store.athletes.push(normProfile({name:n, sex:'M'})); save(); openAnagrafica(); } }}); };
   ov.classList.add('show');
 }
+function sparkline(values){ // mini grafico barre (cronologico)
+  if(!values.length) return '';
+  const max=Math.max(...values), min=Math.min(...values);
+  const span=(max-min)||1;
+  const bars=values.map((v,i)=>{
+    const h=8+Math.round((v-min)/span*30); // 8..38
+    const last=i===values.length-1;
+    return `<div class="spk" style="height:${h}px;background:${last?'var(--lime)':'#41c7f7'}"></div>`;
+  }).join('');
+  return `<div class="sparkwrap"><div class="sparkbars">${bars}</div><div class="sparklbl">progressione totale · ${fmt(round1(min))}→${fmt(round1(max))} kg</div></div>`;
+}
 function openProfile(id){
   const p=store.athletes.find(x=>x.id===id); if(!p){ openAnagrafica(); return; }
   sheet.classList.add('tall');
-  let hist = p.history.length ? p.history.map(h=>{
-    const f = h.formula==='dots'?'DOTS':('IPF '+(h.eq?'Eq':'Cl'));
-    const parts=[]; if(h.squat!=null)parts.push('S '+fmt(h.squat)); if(h.panca!=null)parts.push('P '+fmt(h.panca)); if(h.stacco!=null)parts.push('St '+fmt(h.stacco));
+  const pr=profilePRs(p);
+  const chron=p.history.slice().sort((a,b)=>(a.date||'').localeCompare(b.date||''));
+  const spark = chron.length>=2 ? sparkline(chron.map(h=>h.total||0)) : '';
+  const prRow = p.history.length ? `<div class="prrow">
+    ${['squat','panca','stacco','total'].map(k=>{const lab={squat:'SQ',panca:'PA',stacco:'ST',total:'TOT'}[k]; return `<div class="prc${k==='total'?' tot':''}"><div class="prk">${lab}</div><div class="prv">${pr[k]!=null?fmt(pr[k]):'—'}</div></div>`;}).join('')}
+    <div class="prc"><div class="prk">PT</div><div class="prv">${pr.points!=null?fmt(pr.points):'—'}</div></div>
+  </div>` : '';
+  let hist = p.history.length ? p.history.map((h,idx)=>{
+    const older = p.history[idx+1]; // storico ordinato desc per data
+    const dTot = (older && typeof h.total==='number' && typeof older.total==='number') ? round1(h.total-older.total) : null;
+    const dChip = dTot!==null ? `<span class="delta ${dTot>=0?'up':'down'}">${dTot>=0?'▲ +':'▼ '}${fmt(Math.abs(dTot))} kg</span>` : '';
+    const f = (h.fed?h.fed+' · ':'')+'IPF '+(h.eq?'Eq':'Cl');
+    const parts=LIFTS.map(L=>{ const v=h[L.key]; if(v==null) return ''; const isPR=pr[L.key]!=null && v===pr[L.key]; return `<span class="hl">${({squat:'S',panca:'P',stacco:'St'})[L.key]} ${fmt(v)}${isPR?' 🏆':''}</span>`; }).filter(Boolean).join('');
+    const st=h.stats; let stTxt='';
+    if(st){ const g=(st.squat?.good||0)+(st.panca?.good||0)+(st.stacco?.good||0); const b=(st.squat?.bad||0)+(st.panca?.bad||0)+(st.stacco?.bad||0); if(g+b>0) stTxt=`<span class="hstat">${g}/${g+b} valide</span>`; }
     return `<div class="hrec">
       <div class="htop"><span class="hcomp">${h.compName}</span><span class="hdate">${fmtDate(h.date)}</span></div>
       <div class="hmid"><span class="htot">${fmt(h.total)}<span class="u">kg</span></span>
-        <span class="hpts">${h.points!=null?fmt(h.points)+' pt':''}</span>
-        <span class="hbw">${h.bw!=null?fmt(h.bw)+' kg bw · ':''}${f}${h.done?'':' · prev.'}</span></div>
-      ${parts.length?`<div class="hlifts">${parts.join('  ·  ')}</div>`:''}</div>`;
-  }).join('') : `<div class="sub" style="padding:6px 2px">Nessuna gara nello storico. Usa “Salva risultato nello storico” dal menu durante una gara.</div>`;
-  const best = p.history.reduce((m,h)=> (h.points!=null && (m===null||h.points>m))?h.points:m, null);
+        <span class="hpts">${h.points!=null?fmt(h.points)+' pt':''}</span>${dChip}</div>
+      <div class="hmeta">${h.bw!=null?fmt(h.bw)+' kg bw · ':''}${f}${h.done?'':' · prev.'} ${stTxt}</div>
+      ${parts?`<div class="hlifts">${parts}</div>`:''}
+      ${h.endNote?`<div class="henote">🏁 ${h.endNote.replace(/</g,'&lt;')}</div>`:''}</div>`;
+  }).join('') : `<div class="sub" style="padding:6px 2px">Nessuna gara nello storico. Durante una gara usa “📌 Salva nello storico”.</div>`;
   const agN = ageAt(p.birth, todayISO());
   const agf = ageFactor(agN);
   const ageTxt = p.birth ? (agN+' anni'+(agf.cat?' · '+agf.cat+' ×'+agf.f.toFixed(3):' · Open')) : 'non impostata';
-  sheet.innerHTML=`<h3>${p.name}</h3><div class="sub">${p.sex==='M'?'Maschile':'Femminile'} · ${p.history.length} gare${best!=null?' · best '+fmt(best)+' pt':''}</div>
+  sheet.innerHTML=`<h3>${p.name}</h3><div class="sub">${p.sex==='M'?'Maschile':'Femminile'} · ${p.history.length} gare${pr.points!=null?' · best '+fmt(pr.points)+' pt':''}</div>
+    ${prRow}${spark}
     <div class="hwrap">${hist}</div>
     <div class="mdiv"></div>
     <button class="menuitem" id="pAdd">➕ &nbsp;Aggiungi a “${comp.name}”</button>
     <button class="menuitem" id="pBirth">🎂 &nbsp;Data di nascita: ${p.birth?fmtDate(p.birth):'—'} <span style="color:var(--dim);font-weight:400">(${ageTxt})</span></button>
-    <button class="menuitem" id="pNote">📝 &nbsp;Nota tecnica</button>
+    <button class="menuitem" id="pNotes">📝 &nbsp;Note tecniche per alzata</button>
     <button class="menuitem" id="pRen">✎ &nbsp;Rinomina</button>
     <button class="menuitem" id="pSex">⚥ &nbsp;Sesso: ${p.sex==='M'?'Maschile':'Femminile'}</button>
     <button class="menuitem danger" id="pDel">🗑 &nbsp;Elimina dall'anagrafica</button>
@@ -1198,10 +1535,27 @@ function openProfile(id){
     const e=makeBlank(p.name); e.sex=p.sex; e.athleteId=p.id; roster.push(e); curAth=roster.length-1; closeSheet(); renderAll(); window.scrollTo({top:0});
   };
   sheet.querySelector('#pBirth').onclick=()=>openDate(p.birth||'2000-01-01', v=>{ p.birth=v||p.birth; save(); openProfile(id); renderAll(); });
-  sheet.querySelector('#pNote').onclick=()=>openTextArea({title:'Nota tecnica', sub:p.name+' · cue, comandi, promemoria', value:p.notes, onDone:v=>{ p.notes=v; save(); openProfile(id); renderAll(); }});
+  sheet.querySelector('#pNotes').onclick=()=>openLiftNotes(id);
   sheet.querySelector('#pRen').onclick=()=>{ openText({title:'Rinomina atleta', value:p.name, onDone:n=>{ if(n){ p.name=n; roster.forEach(e=>{ if(e.athleteId===p.id) e.name=n; }); save(); openProfile(id); renderAll(); } }}); };
   sheet.querySelector('#pSex').onclick=()=>{ p.sex=p.sex==='M'?'F':'M'; roster.forEach(e=>{ if(e.athleteId===p.id) e.sex=p.sex; }); save(); openProfile(id); renderAll(); };
   sheet.querySelector('#pDel').onclick=()=>{ openConfirm('Eliminare dall\'anagrafica?', '“'+p.name+'” e il suo storico verranno eliminati. Gli atleti già inseriti nelle gare restano.', 'Elimina', ()=>{ store.athletes=store.athletes.filter(x=>x.id!==id); roster.forEach(e=>{ if(e.athleteId===id) e.athleteId=null; }); save(); openAnagrafica(); }); };
+  ov.classList.add('show');
+}
+function openLiftNotes(id){
+  const p=store.athletes.find(x=>x.id===id); if(!p){ openAnagrafica(); return; }
+  sheet.classList.add('tall');
+  const rows=LIFTS.map(L=>{ const v=p.liftNotes[L.key]||''; return `<div class="menuitem complist" data-l="${L.key}"><span class="cmain"><span style="color:${L.color}">●</span> ${L.name}</span><span class="cdate">${v?v.replace(/</g,'&lt;'):'＋ aggiungi nota tecnica'}</span></div>`; }).join('');
+  const legacy = p.notes ? `<div class="mdiv"></div><div class="sub" style="padding:2px">Nota generale (vecchia)</div><div class="menuitem complist" data-l="__legacy"><span class="cdate">${p.notes.replace(/</g,'&lt;')}</span></div>` : '';
+  sheet.innerHTML=`<h3>Note tecniche — ${p.name}</h3><div class="sub">Cue, setup e comandi per ogni alzata (restano nel profilo)</div>
+    ${rows}${legacy}
+    <div class="sheetbtns"><div class="sbtn ghost" id="lnBack">Indietro</div></div>`;
+  sheet.querySelector('#lnBack').onclick=()=>{ closeSheet(); openProfile(id); };
+  sheet.querySelectorAll('.complist').forEach(b=>b.onclick=()=>{
+    const k=b.dataset.l;
+    if(k==='__legacy'){ openTextArea({title:'Nota generale', sub:p.name, value:p.notes, onDone:v=>{ p.notes=v; save(); openLiftNotes(id); renderAll(); }}); return; }
+    const L=LIFTS.find(x=>x.key===k);
+    openTextArea({title:'Nota tecnica — '+L.name, sub:p.name, value:p.liftNotes[k], onDone:v=>{ p.liftNotes[k]=v; save(); openLiftNotes(id); renderAll(); }});
+  });
   ov.classList.add('show');
 }
 function openAddAthlete(){
@@ -1269,10 +1623,22 @@ function openGuide(){
 
 document.getElementById('menuBtn').onclick=openMenu;
 document.getElementById('teamLbl').onclick=openComps;
+document.getElementById('undoBtn').onclick=doUndo;
+
+/* ---------- SERVICE WORKER (offline + aggiornamenti puliti) ---------- */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+    let reloaded=false;
+    navigator.serviceWorker.addEventListener('controllerchange', ()=>{ if(reloaded) return; reloaded=true; location.reload(); });
+  });
+}
 document.getElementById('resetBtn').onclick=()=>{
   const a=roster[curAth];
-  LIFTS.forEach(l=>{ a[l.key].marks=[0,0,0]; a[l.key].over=[null,null,null]; });
-  renderAll();
+  openConfirm('Azzerare le prove?', 'Segni e alzate reali di “'+a.name+'” in questa gara verranno azzerati.', 'Azzera', ()=>{
+    LIFTS.forEach(l=>{ a[l.key].marks=[0,0,0]; a[l.key].over=[null,null,null]; });
+    lastMark=null; renderAll();
+  });
 };
 
 renderAll();
