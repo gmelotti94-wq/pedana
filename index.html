@@ -173,7 +173,7 @@
   /* MODALS */
   .overlay{position:fixed; inset:0; z-index:100; background:#000000aa; backdrop-filter:blur(3px); display:none; align-items:flex-end; justify-content:center;}
   .overlay.show{display:flex;}
-  .sheet{width:100%; max-width:680px; background:var(--panel); border:1px solid var(--line); border-bottom:none; border-radius:22px 22px 0 0; padding:18px 18px calc(20px + env(safe-area-inset-bottom)); animation:up .18s ease;}
+  .sheet{width:100%; max-width:680px; background:var(--panel); border:1px solid var(--line); border-bottom:none; border-radius:22px 22px 0 0; padding:18px 18px calc(20px + env(safe-area-inset-bottom)); animation:up .18s ease; max-height:88vh; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain;}
   @keyframes up{from{transform:translateY(40px); opacity:.4;} to{transform:none; opacity:1;}}
   .sheet h3{margin:0 0 2px; font-family:'Bebas Neue'; font-size:26px; letter-spacing:1.5px; font-weight:400;}
   .sheet .sub{font-size:12px; color:var(--muted); margin-bottom:14px;}
@@ -266,7 +266,7 @@
   .recedit .rk{font-size:13px; color:var(--muted); flex:1;}
   .recedit .rv{font-family:'Bebas Neue'; font-size:22px; letter-spacing:1px; color:var(--accent);} .recedit .rv.none{color:var(--dim);}
   .tarea{width:100%; min-height:90px; background:var(--panel2); border:1px solid var(--line); color:var(--text); border-radius:12px; padding:12px; font-size:15px; font-family:'Saira'; outline:none; resize:vertical; margin-bottom:14px;}
-  .sheet.tall{max-height:85vh; overflow-y:auto;}
+  .sheet.tall{max-height:88vh;}
   .guide{font-size:13.5px; line-height:1.5;}
   .guide h4{font-family:'Bebas Neue'; font-weight:400; font-size:18px; letter-spacing:1px; margin:16px 0 3px; color:var(--lime);}
   .guide h4:first-child{margin-top:2px;}
@@ -451,7 +451,7 @@ const DEFAULTS = [
 ];
 
 /* ---------- PERSISTENZA ---------- */
-const APP_VERSION='4.0';
+const APP_VERSION='4.1';
 const LSKEY='pedana_v3', OLDKEY='pedana_v2';
 function save(){ try{ store.curComp=comp.id; store.curAth=curAth; localStorage.setItem(LSKEY, JSON.stringify(store)); }catch(e){} }
 function loadRaw(k){ try{ const s=localStorage.getItem(k); return s?JSON.parse(s):null; }catch(e){ return null; } }

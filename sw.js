@@ -1,5 +1,5 @@
 /* PEDANA service worker — offline + aggiornamenti puliti */
-const V = 'pedana-v4.0';
+const V = 'pedana-v4.1';
 const CORE = ['./', './index.html'];
 
 self.addEventListener('install', (e) => {
